@@ -1,0 +1,30 @@
+name: Enable GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+
+jobs:
+  enable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish gh-pages branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" >/tmp/pages.json 2>/tmp/pages.err; then
+            echo "Pages already exists"
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" \
+              -f "source[branch]=gh-pages" -f "source[path]=/"
+          else
+            echo "Creating Pages site"
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" \
+              -f "source[branch]=gh-pages" -f "source[path]=/"
+          fi
+          gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '{html_url:.html_url,status:.status,branch:.source.branch,cname:.cname}'
