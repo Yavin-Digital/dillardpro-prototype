@@ -1,5 +1,5 @@
 # dillardpro-prototype
 
-Baseline mirror of the existing Dillard Property Services prototype at https://clientreview.co/dillardpro/, captured on 2026-11-09 before the scrollytelling redesign.
+Scrollytelling prototype for Dillard Property Services, a free-for-clients Texas apartment locator. Baseline mirror of https://clientreview.co/dillardpro/ is tag `baseline-original`.
 
-Site files live under `site/`. No redesign changes are in this baseline commit.
+Site files live under `site/`. GitHub Pages publishes a snapshot of `site/` from the `gh-pages` branch (`dillardpro.clientreview.co`).

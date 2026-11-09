@@ -1,196 +1,247 @@
-<!--
-  Page: Home
-  Source: https://www.dillardpropertyservices.com/
-  Improvements vs live site:
-  - Full 60vh hero with strong headline, social proof, and dual CTAs
-  - Stats bar (20+ years, 200K+ clients, 100+ reviews, 1500+ properties)
-  - Clear "How It Works" 3-step section
-  - Metro grid linking to Availabilities / Cities
-  - Reviews CTA driving to Zillow
-  - Cheat Sheet callout section
-  - Mobile-first, fully responsive
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dillard Property Services — Texas Apartment Locators | Free for Clients</title>
-<meta name="description" content="Texas's premier apartment locators. Free for clients, paid by properties. Serving Austin, DFW, Houston & San Antonio. 100+ five-star Zillow reviews.">
+<meta name="description" content="Texas apartment locators. Free for clients, paid by properties. Serving Austin, DFW, Houston and San Antonio.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dillard Property Services — Texas Apartment Locators">
-<meta property="og:description" content="Free apartment locating service in Austin, DFW, Houston & San Antonio. 200,000+ Texans helped. 100+ 5-star Zillow reviews.">
-<meta property="og:url" content="https://www.dillardpropertyservices.com/">
-<meta property="og:image" content="https://www.dillardpropertyservices.com/img/og-share.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:description" content="Free apartment locating service in Austin, DFW, Houston and San Antonio. Paid by the property, never by you.">
+<meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<meta property="og:image:width" content="529">
+<meta property="og:image:height" content="488">
+<meta property="og:image:alt" content="Chris and Meg Dillard">
 <meta property="og:site_name" content="Dillard Property Services">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dillard Property Services — Texas Apartment Locators">
-<meta name="twitter:description" content="Free apartment locating in TX. 200K+ clients. 100+ 5-star Zillow reviews.">
-<meta name="twitter:image" content="https://www.dillardpropertyservices.com/img/og-share.jpg">
+<meta name="twitter:description" content="Free apartment locating in Texas. Paid by the property, never by you.">
+<meta name="twitter:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
 <link rel="icon" type="image/jpeg" href="./img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/system.css">
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
 <script src="./js/site.js"></script>
-<style>
-:root{--navy:#000000;--teal:#1c1c1c;--gold:#e94039;--gold-light:#c8302a;--dark:#0d0d0d;--muted:#6B7280;--light:#F4F7F9;--white:#ffffff;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--dark);}
-.hero{width:100%;height:60vh;min-height:480px;display:flex;align-items:center;background:linear-gradient(120deg,rgba(0,0,0,0.94) 0%,rgba(0,0,0,0.85) 100%),url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80') center/cover no-repeat;color:#fff;}
-.container{width:100%;max-width:1180px;margin-inline:auto;padding-inline:24px;}
-.hero-eyebrow{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;}
-.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:18px;max-width:640px;}
-.hero h1 span{color:var(--gold);}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.72);max-width:540px;line-height:1.65;margin-bottom:32px;}
-.btn-gold{display:inline-block;padding:14px 32px;border-radius:7px;background:var(--gold);color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:background 0.2s;}
-.btn-gold:hover{background:var(--gold-light);}
-.btn-ghost{display:inline-block;padding:14px 32px;border-radius:7px;border:2px solid rgba(255,255,255,0.4);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:border-color 0.2s;}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
-.stats-bar{background:var(--dark);padding:28px 0;border-bottom:3px solid var(--gold);}
-.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center;}
-.stat-item{padding:8px 16px;border-right:1px solid rgba(255,255,255,0.08);}
-.stat-item:last-child{border-right:none;}
-.stat-val{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);display:block;}
-.stat-lbl{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:4px;display:block;}
-section.how{padding:80px 0;background:var(--light);}
-.section-label{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
-.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--navy);margin-bottom:12px;}
-.section-sub{font-size:1rem;color:var(--muted);max-width:580px;line-height:1.65;margin-bottom:48px;}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-.step{background:var(--white);border-radius:12px;padding:36px 28px;text-align:center;box-shadow:0 2px 16px rgba(0,0,0,0.07);border-top:3px solid var(--gold);}
-.step-num{font-family:'Montserrat',sans-serif;font-size:2.5rem;font-weight:800;color:var(--gold);opacity:0.35;line-height:1;margin-bottom:12px;}
-.step h3{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.05em;}
-.step p{font-size:0.88rem;color:var(--muted);line-height:1.65;}
-section.metros{padding:80px 0;background:var(--white);}
-.metro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
-.metro-card{background:var(--navy);border-radius:12px;padding:32px 24px;text-align:center;text-decoration:none;color:#fff;transition:transform 0.2s,box-shadow 0.2s;border-bottom:3px solid transparent;}
-.metro-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.25);border-bottom-color:var(--gold);}
-.metro-icon{font-size:2rem;color:var(--gold);margin-bottom:14px;}
-.metro-name{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:6px;}
-.metro-hero{font-size:0.78rem;color:rgba(255,255,255,0.45);letter-spacing:0.06em;text-transform:uppercase;}
-section.why{padding:80px 0;background:var(--light);}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;}
-.why-card{background:var(--white);border-radius:10px;padding:28px 22px;border-left:3px solid var(--gold);}
-.why-icon{font-size:1.6rem;color:var(--gold);margin-bottom:14px;}
-.why-title{font-family:'Montserrat',sans-serif;font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;}
-.why-desc{font-size:0.85rem;color:var(--muted);line-height:1.65;}
-section.cheat-cta{padding:80px 0;background:#000000;border-top:4px solid #e94039;color:#fff;text-align:center;}
-section.cheat-cta .section-label{color:var(--gold);}
-section.cheat-cta .section-title{color:#fff;}
-section.cheat-cta .section-sub{color:rgba(255,255,255,0.65);margin:0 auto 36px;}
-section.reviews-cta{padding:64px 0;background:var(--white);text-align:center;border-top:1px solid #e5e7eb;}
-.stars{color:var(--gold);font-size:1.6rem;margin-bottom:10px;letter-spacing:4px;}
-.review-quote{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:700;color:var(--navy);max-width:520px;margin:0 auto 20px;}
-.review-attr{font-size:0.82rem;color:var(--muted);}
-@media(max-width:900px){.steps{grid-template-columns:1fr;}.metro-grid{grid-template-columns:repeat(2,1fr);}.why-grid{grid-template-columns:repeat(2,1fr);}.stats-inner{grid-template-columns:repeat(2,1fr);}.stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);}}
-@media(max-width:480px){.metro-grid{grid-template-columns:1fr;}.why-grid{grid-template-columns:1fr;}.stats-inner{grid-template-columns:1fr;}}
-</style>
 </head>
 <body>
 <div id="dp-nav"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <p class="hero-eyebrow">Texas's #1 Apartment Locators</p>
-    <h1>Find Your Next Home.<br><span>We Do the Work. You Pay Nothing.</span></h1>
-    <p class="hero-sub">We are paid by the property &mdash; never by you. Access our private database of 1,500+ Texas properties and get the best deals in Austin, DFW, Houston, and San Antonio.</p>
-    <div class="hero-ctas">
-      <a href="./cheat-sheet.html" class="btn-gold">Get the Free Cheat Sheet</a>
-      <a href="./availabilities.html" class="btn-ghost">View Current Availabilities</a>
+<nav class="rail" aria-label="Chapter progress">
+  <a href="#problem" data-chapter="problem" class="is-active">The problem</a>
+  <a href="#locator" data-chapter="locator">How it works</a>
+  <a href="#people" data-chapter="people">Chris and Meg</a>
+  <a href="#cities" data-chapter="cities">Cities</a>
+  <a href="#proof" data-chapter="proof">Proof</a>
+  <a href="#cheat" data-chapter="cheat">Cheat Sheet</a>
+  <a href="#start" data-chapter="start">Start</a>
+</nav>
+
+<main class="story" id="story">
+
+  <section class="chapter" id="problem" data-chapter="problem">
+    <div class="chapter-media" aria-hidden="true">
+      <img class="cover-img js-zoom" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80" alt="" width="1600" height="1067" fetchpriority="high">
+      <div class="scrim"></div>
     </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="container">
-    <div class="stats-inner">
-      <div class="stat-item"><span class="stat-val">20+</span><span class="stat-lbl">Years in Business</span></div>
-      <div class="stat-item"><span class="stat-val">200K+</span><span class="stat-lbl">Clients Helped</span></div>
-      <div class="stat-item"><span class="stat-val">100+</span><span class="stat-lbl">5-Star Zillow Reviews</span></div>
-      <div class="stat-item"><span class="stat-val">1,500+</span><span class="stat-lbl">Texas Properties</span></div>
+    <div class="beat">
+      <p class="kicker">01 — The problem</p>
+      <h2>Apartment hunting in Texas is overwhelming.</h2>
+      <p class="support">Four major markets. Neighborhoods from Frisco to Montrose, Mueller to Stone Oak.</p>
     </div>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="how">
-  <div class="container">
-    <p class="section-label">Simple Process</p>
-    <h2 class="section-title">How It Works</h2>
-    <p class="section-sub">Three steps between you and your perfect Texas apartment &mdash; and you pay nothing.</p>
-    <div class="steps">
-      <div class="step"><div class="step-num">01</div><h3>Tell Us What You Need</h3><p>Fill out the Cheat Sheet form with your metro, area, budget, bedrooms, and move date. We respond by text or email only &mdash; fast and efficient.</p></div>
-      <div class="step"><div class="step-num">02</div><h3>We Pull the Private Listings</h3><p>We access a non-public locator-only database and hand-select the top properties for your criteria each week &mdash; with the best deals and newest communities.</p></div>
-      <div class="step"><div class="step-num">03</div><h3>Write Us on Your Lease</h3><p>When you visit a property, write "Dillard Property Services" on the Guest Card and again on the lease application. That's how we get paid &mdash; by the property, not you.</p></div>
+    <div class="beat reveal">
+      <p class="kicker">01 — The problem</p>
+      <h2>Public sites show what everyone else sees.</h2>
+      <p class="support">Most locators show you the same thing. We show you what they don't.</p>
     </div>
-  </div>
-</section>
-
-<!-- METROS -->
-<section class="metros">
-  <div class="container">
-    <p class="section-label">Where We Serve</p>
-    <h2 class="section-title">Four Major Texas Markets</h2>
-    <p class="section-sub">We cover the neighborhoods that matter &mdash; from Frisco to Montrose, Mueller to Stone Oak.</p>
-    <div class="metro-grid">
-      <a href="./availabilities.html#austin" class="metro-card"><div class="metro-icon"><i class="fa-solid fa-building"></i></div><div class="metro-name">Austin</div><div class="metro-hero">The Capitol City</div></a>
-      <a href="./availabilities.html#dfw" class="metro-card"><div class="metro-icon"><i class="fa-solid fa-city"></i></div><div class="metro-name">Dallas / Fort Worth</div><div class="metro-hero">The Metroplex</div></a>
-      <a href="./availabilities.html#houston" class="metro-card"><div class="metro-icon"><i class="fa-solid fa-oil-well"></i></div><div class="metro-name">Houston</div><div class="metro-hero">The Energy Capital</div></a>
-      <a href="./availabilities.html#san-antonio" class="metro-card"><div class="metro-icon"><i class="fa-solid fa-landmark"></i></div><div class="metro-name">San Antonio</div><div class="metro-hero">The Alamo City</div></a>
+    <div class="beat reveal">
+      <p class="kicker">01 — The problem</p>
+      <h2>We do the work. You pay nothing.</h2>
+      <p class="support">A private database of 1,500+ Texas properties — and the best deals in Austin, DFW, Houston, and San Antonio.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY US -->
-<section class="why">
-  <div class="container">
-    <p class="section-label">Why Dillard</p>
-    <h2 class="section-title">What Sets Us Apart</h2>
-    <p class="section-sub">Most locators show you what everyone else sees. We show you what they don't.</p>
-    <div class="why-grid">
-      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div><div class="why-title">Completely Free for You</div><div class="why-desc">We are paid by the property &mdash; never by the client. Our service costs you nothing from day one.</div></div>
-      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-database"></i></div><div class="why-title">Private Locator Database</div><div class="why-desc">We pull from a non-public master database unavailable to the general public. You see properties others never find.</div></div>
-      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-message"></i></div><div class="why-title">Text &amp; Email First</div><div class="why-desc">Fast, efficient communication. No voicemail, no hold music. We respond quickly and keep it simple.</div></div>
-      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-star"></i></div><div class="why-title">100+ Five-Star Reviews</div><div class="why-desc">Over 100 verified five-star reviews on Zillow from real Texas renters who found their homes with us.</div></div>
+  <section class="chapter" id="locator" data-chapter="locator">
+    <div class="chapter-media" aria-hidden="true">
+      <img class="cover-img js-zoom" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80" alt="" width="1600" height="1066" loading="lazy">
+      <div class="scrim"></div>
     </div>
-  </div>
-</section>
+    <div class="beat reveal">
+      <p class="kicker">02 — How a free locator works</p>
+      <h2>Tell us what you need.</h2>
+      <p class="support">Fill out the Cheat Sheet with your metro, area, budget, bedrooms, and move date. We respond by text or email only — fast and efficient. Free for clients. Paid by properties.</p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">02 — How a free locator works</p>
+      <h2>We pull the private listings.</h2>
+      <p class="support">We access a non-public locator-only database and hand-select the top properties for your criteria each week — with the best deals and newest communities.</p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">02 — How a free locator works</p>
+      <h2>Write us on your lease.</h2>
+      <p class="support">When you visit a property, write "Dillard Property Services" on the Guest Card and again on the lease application. That's how we get paid — by the property, not you.</p>
+    </div>
+  </section>
 
-<!-- CHEAT SHEET CTA -->
-<section class="cheat-cta">
-  <div class="container">
-    <p class="section-label">Free Resource</p>
-    <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">Get the Dillard Cheat Sheet</h2>
-    <p class="section-sub">Used by thousands of Texans over 7+ years. We pull from our master database and deliver the top properties for your area, budget, and timeline &mdash; every week.</p>
-    <a href="./cheat-sheet.html" class="btn-gold">Get My Free Cheat Sheet</a>
-  </div>
-</section>
+  <section class="stat-band" data-chapter="locator" aria-label="By the numbers">
+    <div class="stat-grid">
+      <div><span class="stat-val">20+</span><span class="stat-lbl">Years in Business</span></div>
+      <div><span class="stat-val">200K+</span><span class="stat-lbl">Clients Helped</span></div>
+      <div><span class="stat-val">100+</span><span class="stat-lbl">5-Star Zillow Reviews</span></div>
+      <div><span class="stat-val">1,500+</span><span class="stat-lbl">Texas Properties</span></div>
+    </div>
+  </section>
 
-<!-- REVIEWS CTA -->
-<section class="reviews-cta">
-  <div class="container">
-    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div class="review-quote">"Chris found me the perfect apartment in Frisco in 3 days and it cost me nothing. Unbelievable."</div>
-    <div class="review-attr">Verified Zillow Review &mdash; Dallas / Frisco Client</div>
-    <a href="./reviews.html" style="display:inline-block;margin-top:28px;padding:13px 30px;border-radius:7px;background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;">Read All 100+ Reviews</a>
-  </div>
-</section>
+  <section class="chapter chapter-light" id="people" data-chapter="people">
+    <div class="people-wrap">
+      <figure class="portrait">
+        <img class="js-zoom" src="./img/chris-meg.jpg" alt="Chris and Meg Dillard" width="529" height="488">
+      </figure>
+      <div class="people-copy">
+        <p class="kicker">03 — Chris &amp; Meg</p>
+        <h2>Chris and Meg Dillard</h2>
+        <p class="role">Texas Licensed Real Estate Agent · Apartment Locator · Since 2004</p>
+        <p class="support">Chris Dillard has been helping Texas renters find their perfect apartment for over 20 years. What started as a one-man operation has grown into one of the highest-volume apartment locating businesses in the state — serving Austin, Dallas-Fort Worth, Houston, and San Antonio.</p>
+        <p class="support">Chris and his wife Meg work together on the business. As a licensed Texas real estate professional, Chris represents clients not just as a locator but as a full agent — with access to databases and deal structures that ordinary apartment search sites simply cannot provide.</p>
+        <div class="mini-stats">
+          <div><b>20+</b><span>Years</span></div>
+          <div><b>200K+</b><span>Clients helped</span></div>
+          <div><b>100+</b><span>Five-star reviews</span></div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-dark" href="./about.html">About Chris &amp; Meg</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="cities" data-chapter="cities">
+    <div class="chapter-media" aria-hidden="true">
+      <img class="cover-img js-zoom" src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=1600&q=80" alt="" width="1600" height="1067" loading="lazy">
+      <div class="scrim"></div>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">04 — Cities we serve</p>
+      <p class="nick">The Capitol City</p>
+      <h2>Austin</h2>
+      <p class="support">From the lively East Austin scene to the family-friendly suburbs of Round Rock and Cedar Park — we know every Austin neighborhood at the block level.</p>
+      <p class="more"><a href="./availabilities.html#austin">Austin availabilities</a></p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">04 — Cities we serve</p>
+      <p class="nick">The Metroplex</p>
+      <h2>Dallas / Fort Worth</h2>
+      <p class="support">The Metroplex has 20+ distinct markets — from Uptown Dallas to Frisco to Fort Worth. We match you to the right city for your commute, lifestyle, and budget.</p>
+      <p class="more"><a href="./availabilities.html#dfw">DFW availabilities</a></p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">04 — Cities we serve</p>
+      <p class="nick">The Energy Capital</p>
+      <h2>Houston</h2>
+      <p class="support">From Midtown's walkable culture to The Woodlands' master-planned communities — Houston is Texas's most diverse rental market and we know every corner of it.</p>
+      <p class="more"><a href="./availabilities.html#houston">Houston availabilities</a></p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">04 — Cities we serve</p>
+      <p class="nick">The Alamo City</p>
+      <h2>San Antonio</h2>
+      <p class="support">The Alamo City is one of the fastest-growing rental markets in Texas. We cover every major submarket from the Pearl District to Stone Oak.</p>
+      <p class="more"><a href="./cities.html">Browse every city</a></p>
+    </div>
+  </section>
+
+  <section class="chapter chapter-solid" id="proof" data-chapter="proof">
+    <div class="beat reveal">
+      <p class="kicker">05 — Proof</p>
+      <p class="stars-row" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <blockquote class="quote">"Chris found me the perfect apartment in Frisco in 3 days. I paid absolutely nothing. I would have never found this property on my own. Unbelievable service."</blockquote>
+      <p class="quote-meta">Sarah M. · Dallas / Frisco · Verified Zillow Review</p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">05 — Proof</p>
+      <p class="stars-row" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <blockquote class="quote">"The whole thing was done by text. No phone calls, no back-and-forth. Chris sent me 8 properties that all fit my budget in the Medical Center area. Moved in within 2 weeks."</blockquote>
+      <p class="quote-meta">Marcus T. · Houston / Medical Center · Verified Zillow Review</p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">05 — Proof</p>
+      <p class="stars-row" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <blockquote class="quote">"I was relocating from out of state and had no idea where to start. Chris and the Dillard team walked me through neighborhoods via text and email and I signed a lease without even visiting. Perfect."</blockquote>
+      <p class="quote-meta">Jennifer R. · Austin / South Congress · Verified Zillow Review</p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">05 — Proof</p>
+      <p class="stars-row" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <blockquote class="quote">"They have access to properties and deals that are not on Zillow or Apartments.com. The property I moved into had a free month promotion I never would have found on my own."</blockquote>
+      <p class="quote-meta">David K. · DFW / Uptown Dallas · Verified Zillow Review</p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">05 — Proof</p>
+      <p class="stars-row" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <blockquote class="quote">"Used Chris twice now. Both times I got concessions the property didn't advertise publicly. Free parking, reduced deposit, one month free. Zero cost to me. Five stars every time."</blockquote>
+      <p class="quote-meta">Priya S. · San Antonio / Stone Oak · Verified Zillow Review</p>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">05 — Proof</p>
+      <p class="stars-row" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <blockquote class="quote">"I told them my budget was $1,400 and move-in date was 3 weeks out. They had 6 options to me within an hour. I signed the lease on my lunch break. It doesn't get easier than this."</blockquote>
+      <p class="quote-meta">Antoine L. · Houston / The Heights · Verified Zillow Review</p>
+      <p class="support">100+ five-star reviews on Zillow. 5.0 average. We don't ask for reviews with incentives.</p>
+      <div class="btn-row">
+        <a class="btn" href="./reviews.html">Read the reviews</a>
+        <a class="btn btn-ghost" href="https://www.zillow.com/profile/DillardPropertyServices" target="_blank" rel="noopener">View on Zillow</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="cheat" data-chapter="cheat">
+    <div class="chapter-media" aria-hidden="true">
+      <img class="cover-img js-zoom" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1600&q=80" alt="" width="1600" height="1067" loading="lazy">
+      <div class="scrim"></div>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">06 — The Cheat Sheet</p>
+      <h2>Get the Dillard Cheat Sheet.</h2>
+      <p class="support">Used by thousands of Texans over 7+ years. We pull from our master database and deliver the top properties for your area, budget, and timeline — every week.</p>
+      <div class="btn-row">
+        <a class="btn" href="./cheat-sheet.html">Get My Free Cheat Sheet</a>
+      </div>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">06 — The Cheat Sheet</p>
+      <h2>The property pays. You don't.</h2>
+      <p class="support">When you visit a property, write "Dillard Property Services" on the Guest Card and again on your lease application. That's how we earn our commission — from the property, not from you.</p>
+      <div class="btn-row">
+        <a class="btn" href="./availabilities.html">View Current Availabilities</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="start" data-chapter="start">
+    <div class="chapter-media" aria-hidden="true">
+      <img class="cover-img js-zoom" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80" alt="" width="1600" height="1067" loading="lazy">
+      <div class="scrim"></div>
+    </div>
+    <div class="beat reveal">
+      <p class="kicker">07 — Start your search</p>
+      <h2>Find your next home.</h2>
+      <p class="support">We work by text and email only. No phone calls, no hold music. Fill out the form or text us directly — we respond fast.</p>
+      <p class="support">Text only: 512-640-2443<br>masterleads@dillardpropertyservices.com</p>
+      <div class="btn-row">
+        <a class="btn" href="./contact.html">Contact</a>
+        <a class="btn btn-ghost" href="./cheat-sheet.html">Get the Cheat Sheet</a>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <div id="dp-footer"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script src="./js/anim.js"></script>
-<script src="./js/modal.js"></script>
 <script src="./js/layout.js"></script>
-<script>
-if (window.DillardAnim) {
-  DillardAnim.revealOnLoad('.hero-eyebrow, .hero h1, .hero-sub, .hero-ctas');
-  DillardAnim.revealOnScroll('.step', {delay: anime ? anime.stagger(100) : 0});
-  DillardAnim.revealOnScroll('.metro-card', {delay: anime ? anime.stagger(80) : 0});
-  DillardAnim.revealOnScroll('.why-card', {delay: anime ? anime.stagger(80) : 0});
-}
-</script>
+<script src="./js/motion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="./js/story.js"></script>
 </body>
 </html>
