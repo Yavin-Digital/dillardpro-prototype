@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Texas Apartment Availabilities — Austin, DFW, Houston, San Antonio | Dillard</title>
-<meta name="description" content="Browse current apartment availabilities in Austin, DFW, Houston & San Antonio. Dillard Property Services pulls top-paying, top-deal properties from a private locator-only database.">
+<meta name="description" content="Browse current apartment availabilities in Austin, DFW, Houston and San Antonio. Weekly links from a private SmartApartmentData database, plus personalized recommendations.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Texas Apartment Availabilities — Dillard Property Services">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
@@ -22,15 +22,15 @@
 <body>
 <div id="dp-nav"></div>
 <main class="page-main">
-  <header class="page-hero">
+  <header class="page-hero" data-snap aria-label="Availabilities">
     <img class="cover-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80" alt="" width="1600" height="1066">
     <div class="scrim"></div>
     <div class="hero-inner">
       <p class="kicker">Current Listings</p>
       <h1>Texas Apartment Availabilities</h1>
-      <p class="lede">We update these links weekly from our private SmartApartmentData locator database — the same database that shows which properties are offering the best deals and highest commissions right now.</p>
+      <p class="lede">We update these links weekly from our private SmartApartmentData database — so you see which properties are offering the best deals right now.</p>
       <div class="btn-row">
-        <a href="./cheat-sheet.html" class="btn">Get a Personalized List</a>
+        <a href="./cheat-sheet.html" class="btn">Get personalized recommendations</a>
       </div>
     </div>
   </header>
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <section class="metro-section" id="austin">
+  <section class="metro-section" id="austin" data-snap aria-label="Austin">
     <div class="container">
       <div class="metro-header">
         <div>
@@ -57,7 +57,7 @@
     </div>
   </section>
 
-  <section class="metro-section" id="dfw">
+  <section class="metro-section" id="dfw" data-snap aria-label="Dallas and Fort Worth">
     <div class="container">
       <div class="metro-header">
         <div>
@@ -70,7 +70,7 @@
     </div>
   </section>
 
-  <section class="metro-section" id="houston">
+  <section class="metro-section" id="houston" data-snap aria-label="Houston">
     <div class="container">
       <div class="metro-header">
         <div>
@@ -83,7 +83,7 @@
     </div>
   </section>
 
-  <section class="metro-section" id="san-antonio">
+  <section class="metro-section" id="san-antonio" data-snap aria-label="San Antonio">
     <div class="container">
       <div class="metro-header">
         <div>
@@ -96,9 +96,9 @@
     </div>
   </section>
 
-  <section class="cheat-banner">
-    <h2>Want a Personalized List?</h2>
-    <p>Instead of browsing, let us build your Cheat Sheet. Tell us your metro, area, budget, and move date — we'll send you the top matches by text or email.</p>
+  <section class="cheat-banner" data-snap aria-label="Personalized recommendations">
+    <h2>Want personalized recommendations?</h2>
+    <p>Instead of browsing, let us build your Cheat Sheet. Tell us your metro, area, budget, and move date — we'll send the top matches.</p>
     <a href="./cheat-sheet.html" class="btn">Get My Cheat Sheet</a>
   </section>
 </main>
@@ -110,7 +110,7 @@ function buildGrid(metroId, areas) {
   areas.forEach(function (area) {
     var card = document.createElement('div');
     card.className = 'area-card';
-    card.innerHTML = '<div class="area-name">' + area + '</div><span class="db-note">Private Database</span><br><a class="area-link" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal(\'' + area + ' Listings\',\'<p>In the live site, this link opens a private SmartApartmentData search filtered for <strong>' + area + '</strong> — showing top-paying properties updated weekly by the Dillard team.</p><p style=&quot;margin-top:12px;&quot;>For a personalized list, <a href=&quot;./cheat-sheet.html&quot; style=&quot;color:#000;&quot;>get the Cheat Sheet</a>.</p>\')">View Current Listings</a>';
+    card.innerHTML = '<div class="area-name">' + area + '</div><span class="db-note">Private Database</span><br><a class="area-link" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal(\'' + area + ' Listings\',\'<p>In the live site, this link opens a private SmartApartmentData search filtered for <strong>' + area + '</strong> — current properties updated weekly.</p><p style=&quot;margin-top:12px;&quot;>For personalized recommendations, <a href=&quot;./cheat-sheet.html&quot; style=&quot;color:#000;&quot;>get the Cheat Sheet</a>.</p>\')">View Current Listings</a>';
     grid.appendChild(card);
   });
 }
@@ -121,5 +121,6 @@ if (window.SITE) {
 <script src="./js/modal.js"></script>
 <script src="./js/layout.js"></script>
 <script src="./js/motion.js"></script>
+<script src="./js/chapter-nav.js"></script>
 </body>
 </html>
