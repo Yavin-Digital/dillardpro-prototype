@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Texas Apartment Availabilities — Austin, DFW, Houston, San Antonio | Dillard</title>
+<meta name="description" content="Browse current apartment availabilities in Austin, DFW, Houston & San Antonio. Dillard Property Services pulls top-paying, top-deal properties from a private locator-only database.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Texas Apartment Availabilities — Dillard Property Services">
+<meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<meta property="og:image:alt" content="Chris and Meg Dillard">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<link rel="icon" type="image/jpeg" href="./img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/system.css">
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
+<script src="./js/site.js"></script>
+</head>
+<body>
+<div id="dp-nav"></div>
+<main class="page-main">
+  <header class="page-hero">
+    <img class="cover-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80" alt="" width="1600" height="1066">
+    <div class="scrim"></div>
+    <div class="hero-inner">
+      <p class="kicker">Current Listings</p>
+      <h1>Texas Apartment Availabilities</h1>
+      <p class="lede">We update these links weekly from our private SmartApartmentData locator database — the same database that shows which properties are offering the best deals and highest commissions right now.</p>
+      <div class="btn-row">
+        <a href="./cheat-sheet.html" class="btn">Get a Personalized List</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="metro-nav">
+    <div class="metro-nav-inner">
+      <a href="#austin">Austin</a>
+      <a href="#dfw">Dallas / Fort Worth</a>
+      <a href="#houston">Houston</a>
+      <a href="#san-antonio">San Antonio</a>
+    </div>
+  </div>
+
+  <section class="metro-section" id="austin">
+    <div class="container">
+      <div class="metro-header">
+        <div>
+          <h2 class="metro-title">Austin <span>— The Capitol City</span></h2>
+          <p class="metro-subtitle">8 areas covered · Updated weekly</p>
+        </div>
+        <span class="updated-badge">Updated This Week</span>
+      </div>
+      <div class="area-grid" id="grid-austin"></div>
+    </div>
+  </section>
+
+  <section class="metro-section" id="dfw">
+    <div class="container">
+      <div class="metro-header">
+        <div>
+          <h2 class="metro-title">Dallas / Fort Worth <span>— The Metroplex</span></h2>
+          <p class="metro-subtitle">20 areas covered · Updated weekly</p>
+        </div>
+        <span class="updated-badge">Updated This Week</span>
+      </div>
+      <div class="area-grid" id="grid-dfw"></div>
+    </div>
+  </section>
+
+  <section class="metro-section" id="houston">
+    <div class="container">
+      <div class="metro-header">
+        <div>
+          <h2 class="metro-title">Houston <span>— The Energy Capital</span></h2>
+          <p class="metro-subtitle">20 areas covered · Updated weekly</p>
+        </div>
+        <span class="updated-badge">Updated This Week</span>
+      </div>
+      <div class="area-grid" id="grid-houston"></div>
+    </div>
+  </section>
+
+  <section class="metro-section" id="san-antonio">
+    <div class="container">
+      <div class="metro-header">
+        <div>
+          <h2 class="metro-title">San Antonio <span>— The Alamo City</span></h2>
+          <p class="metro-subtitle">7 areas covered · Updated weekly</p>
+        </div>
+        <span class="updated-badge">Updated This Week</span>
+      </div>
+      <div class="area-grid" id="grid-san-antonio"></div>
+    </div>
+  </section>
+
+  <section class="cheat-banner">
+    <h2>Want a Personalized List?</h2>
+    <p>Instead of browsing, let us build your Cheat Sheet. Tell us your metro, area, budget, and move date — we'll send you the top matches by text or email.</p>
+    <a href="./cheat-sheet.html" class="btn">Get My Cheat Sheet</a>
+  </section>
+</main>
+<div id="dp-footer"></div>
+<script>
+function buildGrid(metroId, areas) {
+  var grid = document.getElementById('grid-' + metroId);
+  if (!grid) return;
+  areas.forEach(function (area) {
+    var card = document.createElement('div');
+    card.className = 'area-card';
+    card.innerHTML = '<div class="area-name">' + area + '</div><span class="db-note">Private Database</span><br><a class="area-link" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal(\'' + area + ' Listings\',\'<p>In the live site, this link opens a private SmartApartmentData search filtered for <strong>' + area + '</strong> — showing top-paying properties updated weekly by the Dillard team.</p><p style=&quot;margin-top:12px;&quot;>For a personalized list, <a href=&quot;./cheat-sheet.html&quot; style=&quot;color:#000;&quot;>get the Cheat Sheet</a>.</p>\')">View Current Listings</a>';
+    grid.appendChild(card);
+  });
+}
+if (window.SITE) {
+  window.SITE.metros.forEach(function (m) { buildGrid(m.id, m.areas); });
+}
+</script>
+<script src="./js/modal.js"></script>
+<script src="./js/layout.js"></script>
+<script src="./js/motion.js"></script>
+</body>
+</html>

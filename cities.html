@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Texas Apartment Locators by City — Austin, DFW, Houston, San Antonio | Dillard</title>
+<meta name="description" content="Find apartments by city in Texas. Dillard Property Services covers every major city in Austin, DFW, Houston & San Antonio. Free locator service — paid by the property.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Texas Apartment Locators by City — Dillard Property Services">
+<meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<meta property="og:image:alt" content="Chris and Meg Dillard">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<link rel="icon" type="image/jpeg" href="./img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="./css/system.css">
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
+<script src="./js/site.js"></script>
+</head>
+<body>
+<div id="dp-nav"></div>
+<main class="page-main">
+  <header class="page-hero">
+    <img class="cover-img" src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=1600&q=80" alt="" width="1600" height="1067">
+    <div class="scrim"></div>
+    <div class="hero-inner">
+      <p class="kicker">Search by City</p>
+      <h1>Texas Apartment Locators by City</h1>
+      <p class="lede">We serve every major city in Austin, DFW, Houston, and San Antonio. Select your metro and city below to see current top-deal properties from our private locator database.</p>
+      <div class="btn-row">
+        <a href="./cheat-sheet.html" class="btn">Get a Personalized Match</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="city-tabs">
+    <div class="city-tabs-inner">
+      <button type="button" class="city-tab active" onclick="showCity('austin',this)">Austin</button>
+      <button type="button" class="city-tab" onclick="showCity('dfw',this)">Dallas / Fort Worth</button>
+      <button type="button" class="city-tab" onclick="showCity('houston',this)">Houston</button>
+      <button type="button" class="city-tab" onclick="showCity('sanantonio',this)">San Antonio</button>
+    </div>
+  </div>
+
+  <section id="city-austin" class="city-section active-section">
+    <div class="container">
+      <div class="city-section-header">
+        <h2>Apartment Locators in <span>Austin</span></h2>
+        <p>From the lively East Austin scene to the family-friendly suburbs of Round Rock and Cedar Park — we know every Austin neighborhood at the block level.</p>
+      </div>
+      <div class="city-grid" id="cgrid-austin"></div>
+    </div>
+  </section>
+
+  <section id="city-dfw" class="city-section">
+    <div class="container">
+      <div class="city-section-header">
+        <h2>Apartment Locators in <span>Dallas / Fort Worth</span></h2>
+        <p>The Metroplex has 20+ distinct markets — from Uptown Dallas to Frisco to Fort Worth. We match you to the right city for your commute, lifestyle, and budget.</p>
+      </div>
+      <div class="city-grid" id="cgrid-dfw"></div>
+    </div>
+  </section>
+
+  <section id="city-houston" class="city-section">
+    <div class="container">
+      <div class="city-section-header">
+        <h2>Apartment Locators in <span>Houston</span></h2>
+        <p>From Midtown's walkable culture to The Woodlands' master-planned communities — Houston is Texas's most diverse rental market and we know every corner of it.</p>
+      </div>
+      <div class="city-grid" id="cgrid-houston"></div>
+    </div>
+  </section>
+
+  <section id="city-sanantonio" class="city-section">
+    <div class="container">
+      <div class="city-section-header">
+        <h2>Apartment Locators in <span>San Antonio</span></h2>
+        <p>The Alamo City is one of the fastest-growing rental markets in Texas. We cover every major submarket from the Pearl District to Stone Oak.</p>
+      </div>
+      <div class="city-grid" id="cgrid-san-antonio"></div>
+    </div>
+  </section>
+</main>
+<div id="dp-footer"></div>
+<script>
+function showCity(id, tab) {
+  document.querySelectorAll('.city-section').forEach(function (s) { s.classList.remove('active-section'); });
+  document.querySelectorAll('.city-tab').forEach(function (t) { t.classList.remove('active'); });
+  document.getElementById('city-' + id).classList.add('active-section');
+  tab.classList.add('active');
+}
+function buildCityGrid(gridId, areas) {
+  var g = document.getElementById(gridId);
+  if (!g) return;
+  areas.forEach(function (a) {
+    g.insertAdjacentHTML('beforeend', '<a class="city-card" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal(\'' + a + ' Apartments\',\'<p>In the live site this would open a dedicated SEO page for <strong>apartments in ' + a + '</strong> with live availability data from our private locator database.</p><p style=&quot;margin-top:12px;&quot;>For a personalized curated list, <a href=&quot;./cheat-sheet.html&quot; style=&quot;color:#000;&quot;>get the Cheat Sheet</a>.</p>\')"><div class="city-card-icon"><i class="fa-solid fa-map-pin"></i></div><div class="city-card-name">' + a + '</div><div class="city-card-meta">Apartments · Condos · Private Database</div><div class="city-card-action">View Listings</div></a>');
+  });
+}
+if (window.SITE) {
+  buildCityGrid('cgrid-austin', window.SITE.metros.find(function (m) { return m.id === 'austin'; }).areas);
+  buildCityGrid('cgrid-dfw', window.SITE.metros.find(function (m) { return m.id === 'dfw'; }).areas);
+  buildCityGrid('cgrid-houston', window.SITE.metros.find(function (m) { return m.id === 'houston'; }).areas);
+  buildCityGrid('cgrid-san-antonio', window.SITE.metros.find(function (m) { return m.id === 'san-antonio'; }).areas);
+}
+</script>
+<script src="./js/modal.js"></script>
+<script src="./js/layout.js"></script>
+<script src="./js/motion.js"></script>
+</body>
+</html>
