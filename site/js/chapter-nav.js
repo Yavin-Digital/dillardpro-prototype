@@ -14,8 +14,8 @@
     return document.documentElement.classList.contains('reduced') ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
-  function desktop() {
-    return window.matchMedia('(min-width: 1024px)').matches;
+  function phone() {
+    return window.matchMedia('(max-width: 639px)').matches;
   }
   function typing(el) {
     if (!el || !el.closest) return false;
@@ -25,7 +25,22 @@
     return !!el.closest('input, textarea, select, iframe');
   }
 
-  var sections = Array.prototype.slice.call(document.querySelectorAll('[data-snap]'));
+  var sections = [];
+  function collect() {
+    var list = [];
+    var narrow = phone();
+    document.querySelectorAll('[data-snap]').forEach(function (el) {
+      var beats = el.querySelectorAll(':scope > .beat');
+      if (narrow && beats.length) {
+        Array.prototype.forEach.call(beats, function (beat) { list.push(beat); });
+      } else {
+        list.push(el);
+      }
+    });
+    sections = list;
+    document.documentElement.classList.toggle('snap-touch', narrow);
+  }
+  collect();
   if (!sections.length) return;
 
   var live = document.querySelector('.chapter-live');
@@ -58,8 +73,11 @@
   function clampY(y) {
     return Math.max(0, Math.min(maxScroll(), y));
   }
+  function alignY(el) {
+    return clampY(docTop(el) - (phone() ? 0 : NAV));
+  }
   function indexAt() {
-    var marker = window.scrollY + NAV + 8;
+    var marker = window.scrollY + (phone() ? 16 : NAV + 8);
     var idx = 0;
     sections.forEach(function (el, i) {
       if (docTop(el) <= marker) idx = i;
@@ -91,7 +109,8 @@
     return bottom <= window.scrollY + window.innerHeight + SLACK;
   }
   function atStart(i) {
-    return docTop(sections[i]) >= window.scrollY + NAV - SLACK;
+    var edge = phone() ? window.scrollY : window.scrollY + NAV;
+    return docTop(sections[i]) >= edge - SLACK;
   }
   function stop() {
     if (anim) cancelAnimationFrame(anim);
@@ -127,24 +146,24 @@
     if (dir > 0) {
       var bottom = docTop(sections[i]) + sections[i].offsetHeight;
       var remaining = bottom - (window.scrollY + window.innerHeight);
-      if (remaining > SLACK) {
+      if (remaining > Math.max(80, window.innerHeight * 0.18)) {
         return clampY(Math.min(bottom - window.innerHeight, window.scrollY + Math.round(window.innerHeight * 0.92)));
       }
-      if (i < sections.length - 1) return clampY(docTop(sections[i + 1]) - NAV);
+      if (i < sections.length - 1) return alignY(sections[i + 1]);
       return clampY(window.scrollY);
     }
     if (!atStart(i)) {
-      var top = docTop(sections[i]) - NAV;
+      var top = alignY(sections[i]);
       return clampY(Math.max(top, window.scrollY - Math.round(window.innerHeight * 0.92)));
     }
     if (i > 0) {
       var prev = sections[i - 1];
-      var prevTop = docTop(prev) - NAV;
+      var prevTop = alignY(prev);
       var prevBottom = docTop(prev) + prev.offsetHeight;
-      if (prevBottom - prevTop > window.innerHeight + SLACK) {
+      if (prevBottom - docTop(prev) > window.innerHeight + 80) {
         return clampY(prevBottom - window.innerHeight);
       }
-      return clampY(prevTop);
+      return prevTop;
     }
     return 0;
   }
@@ -158,7 +177,7 @@
   function goToSection(i) {
     i = Math.max(0, Math.min(sections.length - 1, i));
     lock();
-    scrollToY(clampY(docTop(sections[i]) - NAV), function () { paint(i); });
+    scrollToY(alignY(sections[i]), function () { paint(i); });
     announced = -1;
     paint(i);
   }
@@ -188,7 +207,9 @@
   links.forEach(function (link) {
     link.addEventListener('click', function (e) {
       var id = (link.getAttribute('href') || '').replace('#', '');
-      var i = sections.findIndex(function (el) { return el.id === id; });
+      var i = sections.findIndex(function (el) {
+        return el.id === id || (el.closest && el.closest('#' + id));
+      });
       if (i < 0) return;
       e.preventDefault();
       goToSection(i);
@@ -196,12 +217,29 @@
   });
 
   window.addEventListener('wheel', function (e) {
-    if (!desktop() || typing(e.target)) return;
+    if (typing(e.target)) return;
     e.preventDefault();
     if (locked) return;
     if (Math.abs(e.deltaY) < 4 && Math.abs(e.deltaX) < 4) return;
     move(e.deltaY > 0 || e.deltaX > 0 ? 1 : -1);
   }, { passive: false });
+
+  var touchY = null;
+  window.addEventListener('touchstart', function (e) {
+    if (!phone() || typing(e.target) || e.touches.length !== 1) { touchY = null; return; }
+    touchY = e.touches[0].clientY;
+  }, { passive: true });
+  window.addEventListener('touchmove', function (e) {
+    if (touchY == null || !phone() || typing(e.target)) return;
+    if (e.cancelable) e.preventDefault();
+  }, { passive: false });
+  window.addEventListener('touchend', function (e) {
+    if (touchY == null || !e.changedTouches.length) return;
+    var dy = touchY - e.changedTouches[0].clientY;
+    touchY = null;
+    if (Math.abs(dy) < 42) return;
+    move(dy > 0 ? 1 : -1);
+  }, { passive: true });
 
   var tick = 0;
   window.addEventListener('scroll', function () {
