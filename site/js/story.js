@@ -41,22 +41,6 @@
       tl.to(img, { scale: 1.06, duration: 0.72, ease: 'none' });
     });
 
-    var chapters = gsap.utils.toArray('[data-chapter]');
-    chapters.forEach(function (chapter) {
-      ScrollTrigger.create({
-        trigger: chapter,
-        start: 'top center',
-        end: 'bottom center',
-        onToggle: function (self) {
-          if (!self.isActive) return;
-          var id = chapter.getAttribute('data-chapter');
-          document.querySelectorAll('.rail a').forEach(function (link) {
-            link.classList.toggle('is-active', link.getAttribute('data-chapter') === id);
-          });
-        }
-      });
-    });
-
     root.classList.add('story-ready');
     ScrollTrigger.refresh();
   });

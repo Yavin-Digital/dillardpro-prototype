@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dillard's Cheat Sheet — Free Texas Apartment Guide</title>
-<meta name="description" content="Get Dillard's famous Cheat Sheet — used by thousands of Texans over 7 years. Top apartments in Austin, DFW, Houston & San Antonio, pulled from a private locator-only database.">
+<meta name="description" content="Get Dillard's Cheat Sheet — used by thousands of Texans over 7 years. Top apartments in Austin, DFW, Houston and San Antonio, from a private database.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dillard's Cheat Sheet — Free Texas Apartment Guide">
-<meta property="og:description" content="Thousands of Texans have used it. Private database, not public. Top properties for your area and budget delivered weekly.">
+<meta property="og:description" content="Thousands of Texans have used it. A private database. Top properties for your area and budget, delivered weekly.">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
 <meta property="og:image:alt" content="Chris and Meg Dillard">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +24,7 @@
 <body>
 <div id="dp-nav"></div>
 <main class="page-main">
-  <header class="page-hero">
+  <header class="page-hero" data-snap aria-label="Cheat Sheet">
     <img class="cover-img" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1600&q=80" alt="" width="1600" height="1067">
     <div class="scrim"></div>
     <div class="hero-inner">
@@ -34,11 +34,11 @@
     </div>
   </header>
 
-  <section class="band band-light">
+  <section class="band band-light" data-snap aria-label="Cheat Sheet form">
     <div class="container form-wrap">
       <div class="form-card reveal">
         <h2>Get Your Cheat Sheet</h2>
-        <p class="form-desc">Fill out the form below. We'll respond by text or email — fast, no phone calls.</p>
+        <p class="form-desc">Fill out the form below. We'll follow up with personalized recommendations.</p>
         <form id="cheat-form" onsubmit="handleCheatSubmit(event)">
           <div class="form-row">
             <div class="form-group"><label>First Name *</label><input type="text" name="firstName" required placeholder="Chris"></div>
@@ -83,15 +83,10 @@
       </div>
       <div class="side-content reveal">
         <h3>What You'll Receive</h3>
-        <p>After you submit, <a href="mailto:ChrisD@dillardpropertyservices.com">ChrisD@dillardpropertyservices.com</a> will reach out by text or email with a curated list of top-performing properties in your area — pulled from our private locator-only database.</p>
+        <p>After you submit, <a href="mailto:ChrisD@dillardpropertyservices.com">ChrisD@dillardpropertyservices.com</a> will follow up with personalized recommendations for your area, from our private database.</p>
         <div class="proof-item"><div class="proof-icon"><i class="fa-solid fa-database"></i></div><div class="proof-text"><strong>Private Database Access</strong><span>Non-public listings not available to the general public. Newer properties, better deals.</span></div></div>
         <div class="proof-item"><div class="proof-icon"><i class="fa-solid fa-calendar-week"></i></div><div class="proof-text"><strong>Updated Weekly</strong><span>We refresh our top properties list every week so the information you receive is current.</span></div></div>
-        <div class="proof-item"><div class="proof-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div><div class="proof-text"><strong>Completely Free</strong><span>The property pays our commission. You owe us nothing — not even a tip.</span></div></div>
         <div class="proof-item"><div class="proof-icon"><i class="fa-solid fa-star"></i></div><div class="proof-text"><strong>100+ Five-Star Reviews</strong><span>Verified Zillow reviews from real Texas renters who found their home with us.</span></div></div>
-        <div class="remember">
-          <p style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:8px;">Remember</p>
-          <p style="color:rgba(255,255,255,0.82);">When you visit a property, write <strong>"Dillard Property Services"</strong> on the Guest Card and again on your lease application. That's how we earn our commission — from the property, not from you.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -120,12 +115,13 @@ function handleCheatSubmit(e) {
   var data = new FormData(e.target);
   showPrototypeModal(
     'Request Received!',
-    '<p>Thank you, <strong>' + data.get('firstName') + '</strong>! Your Cheat Sheet request for <strong>' + data.get('metro') + ' &mdash; ' + data.get('area') + '</strong> has been submitted.</p><p style="margin-top:12px;">In the live site, an auto-responder from <strong>ChrisD@dillardpropertyservices.com</strong> would confirm receipt immediately, and Chris would follow up by text or email within 24 hours with curated property recommendations.</p><p style="margin-top:12px;font-size:0.82rem;color:#6B7280;">Remember: when you visit a property, write <strong>Dillard Property Services</strong> on the Guest Card and the lease application.</p>'
+    '<p>Thank you, <strong>' + data.get('firstName') + '</strong>! Your Cheat Sheet request for <strong>' + data.get('metro') + ' &mdash; ' + data.get('area') + '</strong> has been submitted.</p><p style="margin-top:12px;">In the live site, an auto-responder from <strong>ChrisD@dillardpropertyservices.com</strong> would confirm receipt immediately, and Chris would follow up within 24 hours with personalized recommendations.</p>'
   );
 }
 </script>
 <script src="./js/modal.js"></script>
 <script src="./js/layout.js"></script>
 <script src="./js/motion.js"></script>
+<script src="./js/chapter-nav.js"></script>
 </body>
 </html>

@@ -29,12 +29,12 @@
   const footEl = document.getElementById('dp-footer');
   if (footEl) {
     footEl.innerHTML =
-      '<footer class="dp-footer">' +
+      '<footer class="dp-footer" data-snap aria-label="Footer">' +
         '<div class="dp-footer-grid">' +
           '<div class="dp-footer-brand">' +
             '<img src="./img/logo.jpg" alt="Dillard logo">' +
             '<div class="dp-footer-name">Dillard Property Services</div>' +
-            '<p class="dp-footer-sub">Texas\'s premier apartment locators. Serving Austin, DFW, Houston &amp; San Antonio since 2004.<br><br>Text only: 512-640-2443<br>masterleads@dillardpropertyservices.com</p>' +
+            '<p class="dp-footer-sub">Finding the right apartment in Austin, DFW, Houston and San Antonio since 2004.<br><br>512-640-2443<br>masterleads@dillardpropertyservices.com</p>' +
           '</div>' +
           '<div>' +
             '<div class="dp-footer-label">Navigate</div>' +

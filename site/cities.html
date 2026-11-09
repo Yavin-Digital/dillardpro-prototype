@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Texas Apartment Locators by City — Austin, DFW, Houston, San Antonio | Dillard</title>
-<meta name="description" content="Find apartments by city in Texas. Dillard Property Services covers every major city in Austin, DFW, Houston & San Antonio. Free locator service — paid by the property.">
+<title>Texas Apartments by City — Austin, DFW, Houston, San Antonio | Dillard</title>
+<meta name="description" content="Find apartments by city in Texas. Dillard Property Services covers Austin, DFW, Houston and San Antonio, with personalized recommendations from a private database.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Texas Apartment Locators by City — Dillard Property Services">
+<meta property="og:title" content="Texas Apartments by City — Dillard Property Services">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
 <meta property="og:image:alt" content="Chris and Meg Dillard">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,19 +23,20 @@
 <body>
 <div id="dp-nav"></div>
 <main class="page-main">
-  <header class="page-hero">
+  <header class="page-hero" data-snap aria-label="Cities">
     <img class="cover-img" src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=1600&q=80" alt="" width="1600" height="1067">
     <div class="scrim"></div>
     <div class="hero-inner">
       <p class="kicker">Search by City</p>
-      <h1>Texas Apartment Locators by City</h1>
-      <p class="lede">We serve every major city in Austin, DFW, Houston, and San Antonio. Select your metro and city below to see current top-deal properties from our private locator database.</p>
+      <h1>Texas Apartments by City</h1>
+      <p class="lede">We serve every major city in Austin, DFW, Houston, and San Antonio. Select your metro and city below to see current properties from our private database.</p>
       <div class="btn-row">
         <a href="./cheat-sheet.html" class="btn">Get a Personalized Match</a>
       </div>
     </div>
   </header>
 
+  <div data-snap aria-label="City listings">
   <div class="city-tabs">
     <div class="city-tabs-inner">
       <button type="button" class="city-tab active" onclick="showCity('austin',this)">Austin</button>
@@ -48,7 +49,7 @@
   <section id="city-austin" class="city-section active-section">
     <div class="container">
       <div class="city-section-header">
-        <h2>Apartment Locators in <span>Austin</span></h2>
+        <h2>Apartments in <span>Austin</span></h2>
         <p>From the lively East Austin scene to the family-friendly suburbs of Round Rock and Cedar Park — we know every Austin neighborhood at the block level.</p>
       </div>
       <div class="city-grid" id="cgrid-austin"></div>
@@ -58,7 +59,7 @@
   <section id="city-dfw" class="city-section">
     <div class="container">
       <div class="city-section-header">
-        <h2>Apartment Locators in <span>Dallas / Fort Worth</span></h2>
+        <h2>Apartments in <span>Dallas / Fort Worth</span></h2>
         <p>The Metroplex has 20+ distinct markets — from Uptown Dallas to Frisco to Fort Worth. We match you to the right city for your commute, lifestyle, and budget.</p>
       </div>
       <div class="city-grid" id="cgrid-dfw"></div>
@@ -68,7 +69,7 @@
   <section id="city-houston" class="city-section">
     <div class="container">
       <div class="city-section-header">
-        <h2>Apartment Locators in <span>Houston</span></h2>
+        <h2>Apartments in <span>Houston</span></h2>
         <p>From Midtown's walkable culture to The Woodlands' master-planned communities — Houston is Texas's most diverse rental market and we know every corner of it.</p>
       </div>
       <div class="city-grid" id="cgrid-houston"></div>
@@ -78,12 +79,13 @@
   <section id="city-sanantonio" class="city-section">
     <div class="container">
       <div class="city-section-header">
-        <h2>Apartment Locators in <span>San Antonio</span></h2>
+        <h2>Apartments in <span>San Antonio</span></h2>
         <p>The Alamo City is one of the fastest-growing rental markets in Texas. We cover every major submarket from the Pearl District to Stone Oak.</p>
       </div>
       <div class="city-grid" id="cgrid-san-antonio"></div>
     </div>
   </section>
+  </div>
 </main>
 <div id="dp-footer"></div>
 <script>
@@ -97,7 +99,7 @@ function buildCityGrid(gridId, areas) {
   var g = document.getElementById(gridId);
   if (!g) return;
   areas.forEach(function (a) {
-    g.insertAdjacentHTML('beforeend', '<a class="city-card" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal(\'' + a + ' Apartments\',\'<p>In the live site this would open a dedicated SEO page for <strong>apartments in ' + a + '</strong> with live availability data from our private locator database.</p><p style=&quot;margin-top:12px;&quot;>For a personalized curated list, <a href=&quot;./cheat-sheet.html&quot; style=&quot;color:#000;&quot;>get the Cheat Sheet</a>.</p>\')"><div class="city-card-icon"><i class="fa-solid fa-map-pin"></i></div><div class="city-card-name">' + a + '</div><div class="city-card-meta">Apartments · Condos · Private Database</div><div class="city-card-action">View Listings</div></a>');
+    g.insertAdjacentHTML('beforeend', '<a class="city-card" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal(\'' + a + ' Apartments\',\'<p>In the live site this would open a dedicated page for <strong>apartments in ' + a + '</strong> with availability from our private database.</p><p style=&quot;margin-top:12px;&quot;>For personalized recommendations, <a href=&quot;./cheat-sheet.html&quot; style=&quot;color:#000;&quot;>get the Cheat Sheet</a>.</p>\')"><div class="city-card-icon"><i class="fa-solid fa-map-pin"></i></div><div class="city-card-name">' + a + '</div><div class="city-card-meta">Apartments · Condos · Private Database</div><div class="city-card-action">View Listings</div></a>');
   });
 }
 if (window.SITE) {
@@ -110,5 +112,6 @@ if (window.SITE) {
 <script src="./js/modal.js"></script>
 <script src="./js/layout.js"></script>
 <script src="./js/motion.js"></script>
+<script src="./js/chapter-nav.js"></script>
 </body>
 </html>
