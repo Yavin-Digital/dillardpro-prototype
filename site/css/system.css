@@ -647,7 +647,51 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-d); font-weight: 800; letter
   html.js:not(.reduced) [data-snap] { min-height: calc(100vh - var(--nav-h)); }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 639px) {
+  #dp-nav { position: fixed; top: 0; left: 0; right: 0; width: 100%; }
+  .chapter { position: relative; }
+  .chapter-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .chapter .scrim { background: rgba(0, 0, 0, 0.74); }
+  .story .beat,
+  .story .stat-band {
+    min-height: 100svh;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: calc(var(--nav-h) + 16px) 22px calc(112px + env(safe-area-inset-bottom, 0px));
+  }
+  .story .stat-grid { width: min(100%, 340px); }
+  .story .beat h2 { font-size: clamp(1.85rem, 8.4vw, 2.55rem); }
+  .story .quote { font-size: clamp(1.2rem, 4.8vw, 1.55rem); }
+  .page-hero {
+    min-height: 100svh;
+    box-sizing: border-box;
+    padding: calc(var(--nav-h) + 20px) 0 calc(112px + env(safe-area-inset-bottom, 0px));
+  }
+  .page-main [data-snap],
+  .dp-footer[data-snap] {
+    box-sizing: border-box;
+    min-height: 100svh;
+    padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+  }
+  html.snap-touch,
+  html.snap-touch body {
+    overscroll-behavior: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 640px) {
   .chapter-media {
     position: relative !important;
     top: auto !important;
