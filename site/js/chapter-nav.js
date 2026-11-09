@@ -20,7 +20,7 @@
   function typing(el) {
     if (!el || !el.closest) return false;
     var tag = (el.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'textarea' || tag === 'select' || tag === 'iframe') return true;
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || tag === 'iframe' || tag === 'video') return true;
     if (el.isContentEditable) return true;
     return !!el.closest('input, textarea, select, iframe');
   }

@@ -367,6 +367,25 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-d); font-weight: 800; letter
   color: #fff;
 }
 .chapter-light { background: var(--light); color: #0d0d0d; }
+.video-chapter {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: calc(var(--nav-h) + 28px) 24px calc(120px + env(safe-area-inset-bottom, 0px));
+}
+.video-frame {
+  width: min(1100px, 100%);
+  margin-inline: auto;
+}
+.video-chapter video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
 .chapter-media {
   position: relative;
   height: 220px;
@@ -674,6 +693,11 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-d); font-weight: 800; letter
   .story .stat-grid { width: min(100%, 340px); }
   .story .beat h2 { font-size: clamp(1.85rem, 8.4vw, 2.55rem); }
   .story .quote { font-size: clamp(1.2rem, 4.8vw, 1.55rem); }
+  .video-chapter {
+    min-height: 100svh;
+    padding: calc(var(--nav-h) + 16px) 0 calc(112px + env(safe-area-inset-bottom, 0px));
+  }
+  .video-frame { width: 100%; }
   .page-hero {
     min-height: 100svh;
     box-sizing: border-box;
