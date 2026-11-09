@@ -1,148 +1,110 @@
-<!--
-  Page: Reviews
-  Source: https://www.dillardpropertyservices.com/reviews (links to Zillow)
-  Improvements vs live site:
-  - Dedicated reviews page instead of just a link
-  - Featured review cards with star ratings and verified badge
-  - Zillow embed CTA + direct link
-  - Social proof stats prominently displayed
-  - CTA to get started
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Client Reviews — 100+ Five-Star Zillow Reviews | Dillard Property Services</title>
 <meta name="description" content="Read 100+ verified five-star Zillow reviews from real Texas renters who found their apartments with Dillard Property Services. Austin, DFW, Houston & San Antonio.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="100+ Five-Star Reviews — Dillard Property Services">
-<meta property="og:url" content="https://www.dillardpropertyservices.com/reviews.html">
-<meta property="og:image" content="https://www.dillardpropertyservices.com/img/og-share.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<meta property="og:image:alt" content="Chris and Meg Dillard">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
 <link rel="icon" type="image/jpeg" href="./img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/system.css">
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
 <script src="./js/site.js"></script>
-<style>
-:root{--navy:#000000;--teal:#1c1c1c;--gold:#e94039;--gold-light:#c8302a;--dark:#0d0d0d;--muted:#6B7280;--light:#F4F7F9;--white:#ffffff;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:var(--light);color:var(--dark);}
-.page-hero{width:100%;height:60vh;min-height:480px;display:flex;align-items:center;background:linear-gradient(120deg,rgba(0,0,0,0.95) 0%,rgba(0,0,0,0.9) 100%),url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=80') center/cover no-repeat;color:#fff;text-align:center;}
-.container{width:100%;max-width:1180px;margin-inline:auto;padding-inline:24px;}
-.eyebrow{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
-.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:14px;max-width:700px;margin-inline:auto;}
-.page-hero p{font-size:0.95rem;color:rgba(255,255,255,0.65);max-width:520px;line-height:1.65;margin:0 auto 28px;}
-.stars-hero{font-size:2rem;color:var(--gold);letter-spacing:6px;margin-bottom:16px;}
-.btn-gold{display:inline-block;padding:14px 32px;border-radius:7px;background:var(--gold);color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:background 0.2s;}
-.btn-gold:hover{background:var(--gold-light);}
-.proof-bar{background:var(--dark);padding:28px 0;}
-.proof-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:0;text-align:center;}
-.proof-item{padding:8px 16px;border-right:1px solid rgba(255,255,255,0.08);}
-.proof-item:last-child{border-right:none;}
-.proof-val{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);display:block;}
-.proof-lbl{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;display:block;}
-section.reviews-section{padding:80px 0;}
-.reviews-header{text-align:center;margin-bottom:56px;}
-.section-label{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
-.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--navy);margin-bottom:12px;}
-.section-sub{font-size:0.92rem;color:var(--muted);line-height:1.65;max-width:560px;margin:0 auto;}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px;}
-.review-card{background:var(--white);border-radius:12px;padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-top:3px solid var(--gold);}
-.review-stars{color:var(--gold);font-size:0.9rem;margin-bottom:12px;letter-spacing:2px;}
-.review-text{font-size:0.9rem;color:#374151;line-height:1.7;margin-bottom:16px;font-style:italic;}
-.review-author{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--navy);}
-.review-location{font-size:0.75rem;color:var(--muted);margin-top:3px;}
-.verified-badge{display:inline-block;font-size:0.7rem;background:rgba(28,28,28,0.08);color:var(--teal);padding:3px 8px;border-radius:4px;font-weight:600;margin-top:8px;}
-.zillow-cta{background:var(--navy);border-radius:14px;padding:48px 40px;text-align:center;color:#fff;}
-.zillow-cta h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:10px;}
-.zillow-cta p{font-size:0.92rem;color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 28px;line-height:1.65;}
-.btn-zillow{display:inline-block;padding:14px 32px;border-radius:7px;background:var(--gold);color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:background 0.2s;}
-.btn-zillow:hover{background:var(--gold-light);}
-@media(max-width:860px){.reviews-grid{grid-template-columns:1fr 1fr;}.proof-inner{grid-template-columns:1fr;}}
-@media(max-width:580px){.reviews-grid{grid-template-columns:1fr;}}
-</style>
 </head>
 <body>
 <div id="dp-nav"></div>
+<main class="page-main">
+  <header class="page-hero">
+    <img class="cover-img" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=80" alt="" width="1600" height="1067">
+    <div class="scrim"></div>
+    <div class="hero-inner">
+      <p class="kicker">Verified Client Reviews</p>
+      <p class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <h1>100+ Five-Star Reviews From Real Texas Renters</h1>
+      <p class="lede">We don't ask for reviews with incentives. These come from real clients who found their home through Dillard — verified on Zillow.</p>
+      <div class="btn-row">
+        <a href="https://www.zillow.com/profile/DillardPropertyServices" target="_blank" rel="noopener" class="btn">Read All Reviews on Zillow</a>
+      </div>
+    </div>
+  </header>
 
-<section class="page-hero">
-  <div class="container">
-    <p class="eyebrow">Verified Client Reviews</p>
-    <div class="stars-hero">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <h1>100+ Five-Star Reviews<br>From Real Texas Renters</h1>
-    <p>We don't ask for reviews with incentives. These come from real clients who found their home through Dillard &mdash; verified on Zillow.</p>
-    <a href="https://www.zillow.com/profile/DillardPropertyServices" target="_blank" rel="noopener" class="btn-gold">Read All Reviews on Zillow</a>
-  </div>
-</section>
-
-<div class="proof-bar">
-  <div class="container">
+  <div class="proof-bar">
     <div class="proof-inner">
-      <div class="proof-item"><span class="proof-val">100+</span><span class="proof-lbl">Five-Star Reviews on Zillow</span></div>
-      <div class="proof-item"><span class="proof-val">5.0</span><span class="proof-lbl">Average Star Rating</span></div>
-      <div class="proof-item"><span class="proof-val">200K+</span><span class="proof-lbl">Texas Clients Helped</span></div>
+      <div><span class="stat-val">100+</span><span class="stat-lbl">Five-Star Reviews on Zillow</span></div>
+      <div><span class="stat-val">5.0</span><span class="stat-lbl">Average Star Rating</span></div>
+      <div><span class="stat-val">200K+</span><span class="stat-lbl">Texas Clients Helped</span></div>
     </div>
   </div>
-</div>
 
-<section class="reviews-section">
-  <div class="container">
-    <div class="reviews-header">
-      <p class="section-label">What Clients Say</p>
-      <h2 class="section-title">Selected Client Reviews</h2>
-      <p class="section-sub">A sample of what Texas renters say after working with Dillard Property Services. All reviews verified on Zillow.</p>
+  <section class="band band-light">
+    <div class="container">
+      <div class="center" style="margin-bottom:40px;">
+        <p class="kicker">What Clients Say</p>
+        <h2 class="section-title">Selected Client Reviews</h2>
+        <p class="lede">A sample of what Texas renters say after working with Dillard Property Services. All reviews verified on Zillow.</p>
+      </div>
+      <div class="reviews-grid">
+        <article class="review-card reveal">
+          <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Chris found me the perfect apartment in Frisco in 3 days. I paid absolutely nothing. I would have never found this property on my own. Unbelievable service."</p>
+          <div class="review-author">Sarah M.</div>
+          <div class="review-location">Dallas / Frisco</div>
+          <span class="verified-badge">Verified Zillow Review</span>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"The whole thing was done by text. No phone calls, no back-and-forth. Chris sent me 8 properties that all fit my budget in the Medical Center area. Moved in within 2 weeks."</p>
+          <div class="review-author">Marcus T.</div>
+          <div class="review-location">Houston / Medical Center</div>
+          <span class="verified-badge">Verified Zillow Review</span>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"I was relocating from out of state and had no idea where to start. Chris and the Dillard team walked me through neighborhoods via text and email and I signed a lease without even visiting. Perfect."</p>
+          <div class="review-author">Jennifer R.</div>
+          <div class="review-location">Austin / South Congress</div>
+          <span class="verified-badge">Verified Zillow Review</span>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"They have access to properties and deals that are not on Zillow or Apartments.com. The property I moved into had a free month promotion I never would have found on my own."</p>
+          <div class="review-author">David K.</div>
+          <div class="review-location">DFW / Uptown Dallas</div>
+          <span class="verified-badge">Verified Zillow Review</span>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Used Chris twice now. Both times I got concessions the property didn't advertise publicly. Free parking, reduced deposit, one month free. Zero cost to me. Five stars every time."</p>
+          <div class="review-author">Priya S.</div>
+          <div class="review-location">San Antonio / Stone Oak</div>
+          <span class="verified-badge">Verified Zillow Review</span>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"I told them my budget was $1,400 and move-in date was 3 weeks out. They had 6 options to me within an hour. I signed the lease on my lunch break. It doesn't get easier than this."</p>
+          <div class="review-author">Antoine L.</div>
+          <div class="review-location">Houston / The Heights</div>
+          <span class="verified-badge">Verified Zillow Review</span>
+        </article>
+      </div>
+      <div class="zillow-cta reveal">
+        <h2>Read All 100+ Reviews on Zillow</h2>
+        <p>These are just a sample. All 100+ five-star reviews are publicly verified on Zillow — one of the most trusted review platforms in real estate.</p>
+        <a href="https://www.zillow.com/profile/DillardPropertyServices" target="_blank" rel="noopener" class="btn">View All Reviews on Zillow</a>
+      </div>
     </div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Chris found me the perfect apartment in Frisco in 3 days. I paid absolutely nothing. I would have never found this property on my own. Unbelievable service."</p>
-        <div class="review-author">Sarah M.</div><div class="review-location">Dallas / Frisco</div><span class="verified-badge">Verified Zillow Review</span>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"The whole thing was done by text. No phone calls, no back-and-forth. Chris sent me 8 properties that all fit my budget in the Medical Center area. Moved in within 2 weeks."</p>
-        <div class="review-author">Marcus T.</div><div class="review-location">Houston / Medical Center</div><span class="verified-badge">Verified Zillow Review</span>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"I was relocating from out of state and had no idea where to start. Chris and the Dillard team walked me through neighborhoods via text and email and I signed a lease without even visiting. Perfect."</p>
-        <div class="review-author">Jennifer R.</div><div class="review-location">Austin / South Congress</div><span class="verified-badge">Verified Zillow Review</span>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"They have access to properties and deals that are not on Zillow or Apartments.com. The property I moved into had a free month promotion I never would have found on my own."</p>
-        <div class="review-author">David K.</div><div class="review-location">DFW / Uptown Dallas</div><span class="verified-badge">Verified Zillow Review</span>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Used Chris twice now. Both times I got concessions the property didn't advertise publicly. Free parking, reduced deposit, one month free. Zero cost to me. Five stars every time."</p>
-        <div class="review-author">Priya S.</div><div class="review-location">San Antonio / Stone Oak</div><span class="verified-badge">Verified Zillow Review</span>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"I told them my budget was $1,400 and move-in date was 3 weeks out. They had 6 options to me within an hour. I signed the lease on my lunch break. It doesn't get easier than this."</p>
-        <div class="review-author">Antoine L.</div><div class="review-location">Houston / The Heights</div><span class="verified-badge">Verified Zillow Review</span>
-      </div>
-    </div>
-    <div class="zillow-cta">
-      <h2>Read All 100+ Reviews on Zillow</h2>
-      <p>These are just a sample. All 100+ five-star reviews are publicly verified on Zillow &mdash; one of the most trusted review platforms in real estate.</p>
-      <a href="https://www.zillow.com/profile/DillardPropertyServices" target="_blank" rel="noopener" class="btn-zillow">View All Reviews on Zillow &rarr;</a>
-    </div>
-  </div>
-</section>
-
+  </section>
+</main>
 <div id="dp-footer"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script src="./js/anim.js"></script>
-<script src="./js/modal.js"></script>
 <script src="./js/layout.js"></script>
-<script>
-if (window.DillardAnim) {
-  DillardAnim.revealOnScroll('.review-card', {delay: typeof anime !== 'undefined' ? anime.stagger(80) : 0});
-}
-</script>
+<script src="./js/motion.js"></script>
 </body>
 </html>
