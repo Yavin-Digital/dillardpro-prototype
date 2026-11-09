@@ -1,0 +1,124 @@
+<!--
+  Page: About
+  Source: https://www.dillardpropertyservices.com/about
+  Improvements vs live site:
+  - Professional bio layout with Chris + Meg photo
+  - Timeline of milestones (20+ years, 200K clients)
+  - Chris's credentials as a Texas Licensed Real Estate Agent
+  - Positions business as Real Estate Agents, not just locators
+  - Clear CTA to Cheat Sheet and Reviews
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Chris Dillard — Texas Licensed Real Estate Agent | Dillard Property Services</title>
+<meta name="description" content="Meet Chris Dillard — Texas Licensed Real Estate Agent and apartment locator with 20+ years of experience helping 200,000+ Texans find their perfect home.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About Chris Dillard — Dillard Property Services">
+<meta property="og:url" content="https://www.dillardpropertyservices.com/about.html">
+<meta property="og:image" content="https://www.dillardpropertyservices.com/img/og-share.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="./img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="./js/site.js"></script>
+<style>
+:root{--navy:#000000;--teal:#1c1c1c;--gold:#e94039;--gold-light:#c8302a;--dark:#0d0d0d;--muted:#6B7280;--light:#F4F7F9;--white:#ffffff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--dark);}
+.page-hero{width:100%;height:60vh;min-height:480px;display:flex;align-items:center;background:linear-gradient(120deg,rgba(0,0,0,0.96) 0%,rgba(0,0,0,0.92) 100%),url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80') center/cover no-repeat;color:#fff;}
+.container{width:100%;max-width:1180px;margin-inline:auto;padding-inline:24px;}
+.eyebrow{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:14px;max-width:640px;}
+.page-hero p{font-size:0.95rem;color:rgba(255,255,255,0.65);max-width:520px;line-height:1.65;}
+section.bio{padding:80px 0;background:var(--white);}
+.bio-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start;}
+.bio-photo{position:relative;}
+.bio-photo img{width:100%;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,0.18);}
+.bio-badge{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);padding:12px 24px;border-radius:30px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;box-shadow:0 4px 16px rgba(233,64,57,0.35);}
+.bio-content{padding-top:8px;}
+.section-label{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
+.bio-content h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:var(--navy);margin-bottom:8px;}
+.bio-title{font-size:0.88rem;color:var(--teal);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:24px;}
+.bio-text{font-size:0.95rem;color:#374151;line-height:1.75;margin-bottom:16px;}
+.bio-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
+.bio-stat{text-align:center;padding:20px 12px;background:var(--light);border-radius:10px;border-top:3px solid var(--gold);}
+.bio-stat-val{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);display:block;}
+.bio-stat-lbl{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;display:block;}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;}
+.btn-gold{display:inline-block;padding:13px 28px;border-radius:7px;background:var(--gold);color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:background 0.2s;}
+.btn-gold:hover{background:var(--gold-light);}
+.btn-outline{display:inline-block;padding:13px 28px;border-radius:7px;border:2px solid var(--navy);color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:all 0.2s;}
+.btn-outline:hover{background:var(--navy);color:#fff;}
+section.how-we-work{padding:72px 0;background:var(--light);}
+.hww-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px;}
+.hww-item{background:var(--white);border-radius:10px;padding:28px 24px;border-left:3px solid var(--gold);}
+.hww-icon{font-size:1.4rem;color:var(--gold);margin-bottom:12px;}
+.hww-title{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;}
+.hww-desc{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+section.section-title-h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--navy);margin-bottom:12px;}
+@media(max-width:860px){.bio-grid{grid-template-columns:1fr;}.bio-photo{max-width:420px;margin:0 auto 48px;}.bio-stats{grid-template-columns:1fr 1fr;}.hww-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="dp-nav"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Meet the Team</p>
+    <h1>Texas's Most Trusted Apartment Locator</h1>
+    <p>We are not a call center. We are not a lead aggregator. We are licensed Texas real estate professionals who have helped 200,000+ Texans find their home.</p>
+  </div>
+</section>
+
+<section class="bio">
+  <div class="container">
+    <div class="bio-grid">
+      <div class="bio-photo">
+        <img src="./img/chris-meg.jpg" alt="Chris and Meg Dillard">
+        <div class="bio-badge">Texas Licensed Real Estate Agent</div>
+      </div>
+      <div class="bio-content">
+        <p class="section-label">About Chris Dillard</p>
+        <h2>Chris Dillard</h2>
+        <div class="bio-title">Texas Licensed Real Estate Agent &middot; Apartment Locator &middot; Since 2004</div>
+        <p class="bio-text">Chris Dillard has been helping Texas renters find their perfect apartment for over 20 years. What started as a one-man operation has grown into one of the highest-volume apartment locating businesses in the state &mdash; serving Austin, Dallas-Fort Worth, Houston, and San Antonio.</p>
+        <p class="bio-text">Unlike the typical locator who spends most of their time escorting clients from property to property, Chris built a system that works entirely by text and email. Efficient, precise, and built around the client's schedule, not his. The result: over 200,000 Texans placed, 100+ verified five-star Zillow reviews, and months where the business does over $150,000 in volume.</p>
+        <p class="bio-text">Chris and his wife Meg work together on the business. As a licensed Texas real estate professional, Chris represents clients not just as a locator but as a full agent &mdash; with access to databases and deal structures that ordinary apartment search sites simply cannot provide.</p>
+        <div class="bio-stats">
+          <div class="bio-stat"><span class="bio-stat-val">20+</span><span class="bio-stat-lbl">Years Experience</span></div>
+          <div class="bio-stat"><span class="bio-stat-val">200K+</span><span class="bio-stat-lbl">Clients Helped</span></div>
+          <div class="bio-stat"><span class="bio-stat-val">100+</span><span class="bio-stat-lbl">5-Star Reviews</span></div>
+        </div>
+        <div class="btn-row">
+          <a href="./cheat-sheet.html" class="btn-gold">Get the Cheat Sheet</a>
+          <a href="./reviews.html" class="btn-outline">See Our Reviews</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-we-work">
+  <div class="container">
+    <p class="section-label">Our Approach</p>
+    <h2 class="section-title-h2" style="font-family:'Montserrat',sans-serif;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--navy);margin-bottom:12px;">How We Work Differently</h2>
+    <p style="font-size:0.95rem;color:var(--muted);max-width:580px;line-height:1.65;margin-bottom:40px;">We do the opposite of what most locators do &mdash; and it works better.</p>
+    <div class="hww-grid">
+      <div class="hww-item"><div class="hww-icon"><i class="fa-solid fa-message"></i></div><div class="hww-title">Text &amp; Email Only</div><div class="hww-desc">No phone calls. No voicemail. No hold times. We communicate fast, in writing, on your schedule.</div></div>
+      <div class="hww-item"><div class="hww-icon"><i class="fa-solid fa-database"></i></div><div class="hww-title">Private Locator Database</div><div class="hww-desc">We access SmartApartmentData &mdash; a professional database unavailable to the public &mdash; to find you deals others never see.</div></div>
+      <div class="hww-item"><div class="hww-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div><div class="hww-title">You Pay Nothing</div><div class="hww-desc">The property pays our commission. Our incentive is finding you the best deal so you stay and write us on the lease.</div></div>
+    </div>
+  </div>
+</section>
+
+<div id="dp-footer"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="./js/anim.js"></script>
+<script src="./js/modal.js"></script>
+<script src="./js/layout.js"></script>
+</body>
+</html>

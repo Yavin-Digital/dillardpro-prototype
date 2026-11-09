@@ -1,0 +1,164 @@
+<!--
+  Page: Availabilities
+  Source: https://www.dillardpropertyservices.com/availabilities
+  Improvements vs live site:
+  - Clean metro section navigation with anchor links
+  - Area cards showing each sub-market with placeholder for SmartApartmentData weekly link
+  - Clear UX note explaining how links update weekly
+  - Get the Cheat Sheet CTA for personalized service
+  - Linked to cities.html (same data, different framing)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Texas Apartment Availabilities — Austin, DFW, Houston, San Antonio | Dillard</title>
+<meta name="description" content="Browse current apartment availabilities in Austin, DFW, Houston & San Antonio. Dillard Property Services pulls top-paying, top-deal properties from a private locator-only database.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Texas Apartment Availabilities — Dillard Property Services">
+<meta property="og:url" content="https://www.dillardpropertyservices.com/availabilities.html">
+<meta property="og:image" content="https://www.dillardpropertyservices.com/img/og-share.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="./img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="./js/site.js"></script>
+<style>
+:root{--navy:#000000;--teal:#1c1c1c;--gold:#e94039;--gold-light:#c8302a;--dark:#0d0d0d;--muted:#6B7280;--light:#F4F7F9;--white:#ffffff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--light);color:var(--dark);}
+.page-hero{width:100%;height:60vh;min-height:480px;display:flex;align-items:center;background:linear-gradient(120deg,rgba(0,0,0,0.95) 0%,rgba(0,0,0,0.9) 100%),url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80') center/cover no-repeat;color:#fff;}
+.container{width:100%;max-width:1180px;margin-inline:auto;padding-inline:24px;}
+.eyebrow{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:16px;max-width:640px;}
+.page-hero h1 span{color:var(--gold);}
+.page-hero p{font-size:0.98rem;color:rgba(255,255,255,0.68);max-width:540px;line-height:1.65;margin-bottom:28px;}
+.metro-nav{background:var(--dark);padding:0;}
+.metro-nav-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;gap:0;overflow-x:auto;}
+.metro-nav a{display:inline-block;padding:18px 28px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap;transition:color 0.2s,border-color 0.2s;}
+.metro-nav a:hover{color:var(--gold);border-bottom-color:var(--gold);}
+.metro-section{padding:72px 0;border-bottom:1px solid #e5e7eb;}
+.metro-section:last-of-type{border-bottom:none;}
+.metro-section:nth-child(even){background:var(--white);}
+.metro-section:nth-child(odd){background:var(--light);}
+.metro-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:36px;}
+.metro-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:var(--navy);}
+.metro-title span{color:var(--gold);}
+.metro-subtitle{font-size:0.8rem;color:var(--muted);margin-top:4px;}
+.updated-badge{font-size:0.72rem;background:var(--teal);color:rgba(255,255,255,0.75);padding:6px 14px;border-radius:20px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;}
+.area-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+.area-card{background:var(--white);border-radius:10px;padding:22px 20px;border-left:3px solid var(--gold);box-shadow:0 1px 8px rgba(0,0,0,0.06);transition:transform 0.2s,box-shadow 0.2s;}
+.area-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.12);}
+.area-name{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.area-link{display:inline-block;margin-top:12px;font-size:0.78rem;font-weight:600;color:var(--teal);text-decoration:none;letter-spacing:0.04em;border-bottom:1px dashed var(--teal);}
+.area-link:hover{color:var(--gold);border-bottom-color:var(--gold);}
+.db-note{display:inline-block;font-size:0.7rem;background:rgba(233,64,57,0.12);color:var(--gold);padding:3px 8px;border-radius:4px;font-weight:600;margin-top:6px;}
+.cheat-banner{background:linear-gradient(135deg,var(--navy),var(--teal));padding:56px 24px;text-align:center;color:#fff;}
+.cheat-banner h2{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:12px;}
+.cheat-banner p{font-size:0.95rem;color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto 28px;line-height:1.65;}
+.btn-gold{display:inline-block;padding:14px 32px;border-radius:7px;background:var(--gold);color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;transition:background 0.2s;}
+.btn-gold:hover{background:var(--gold-light);}
+@media(max-width:600px){.metro-header{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<div id="dp-nav"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Current Listings</p>
+    <h1>Texas Apartment <span>Availabilities</span></h1>
+    <p>We update these links weekly from our private SmartApartmentData locator database &mdash; the same database that shows which properties are offering the best deals and highest commissions right now.</p>
+    <a href="./cheat-sheet.html" class="btn-gold">Get a Personalized List</a>
+  </div>
+</section>
+
+<!-- Metro Quick Nav -->
+<div class="metro-nav">
+  <div class="metro-nav-inner">
+    <a href="#austin">Austin</a>
+    <a href="#dfw">Dallas / Fort Worth</a>
+    <a href="#houston">Houston</a>
+    <a href="#san-antonio">San Antonio</a>
+  </div>
+</div>
+
+<!-- AUSTIN -->
+<div class="metro-section" id="austin">
+  <div class="container">
+    <div class="metro-header">
+      <div><div class="metro-title">Austin <span>&mdash; The Capitol City</span></div><div class="metro-subtitle">8 areas covered &middot; Updated weekly</div></div>
+      <span class="updated-badge">Updated This Week</span>
+    </div>
+    <div class="area-grid" id="grid-austin"></div>
+  </div>
+</div>
+
+<!-- DFW -->
+<div class="metro-section" id="dfw">
+  <div class="container">
+    <div class="metro-header">
+      <div><div class="metro-title">Dallas / Fort Worth <span>&mdash; The Metroplex</span></div><div class="metro-subtitle">20 areas covered &middot; Updated weekly</div></div>
+      <span class="updated-badge">Updated This Week</span>
+    </div>
+    <div class="area-grid" id="grid-dfw"></div>
+  </div>
+</div>
+
+<!-- HOUSTON -->
+<div class="metro-section" id="houston">
+  <div class="container">
+    <div class="metro-header">
+      <div><div class="metro-title">Houston <span>&mdash; The Energy Capital</span></div><div class="metro-subtitle">20 areas covered &middot; Updated weekly</div></div>
+      <span class="updated-badge">Updated This Week</span>
+    </div>
+    <div class="area-grid" id="grid-houston"></div>
+  </div>
+</div>
+
+<!-- SAN ANTONIO -->
+<div class="metro-section" id="san-antonio">
+  <div class="container">
+    <div class="metro-header">
+      <div><div class="metro-title">San Antonio <span>&mdash; The Alamo City</span></div><div class="metro-subtitle">7 areas covered &middot; Updated weekly</div></div>
+      <span class="updated-badge">Updated This Week</span>
+    </div>
+    <div class="area-grid" id="grid-san-antonio"></div>
+  </div>
+</div>
+
+<!-- CHEAT SHEET CTA -->
+<div class="cheat-banner">
+  <h2>Want a Personalized List?</h2>
+  <p>Instead of browsing, let us build your Cheat Sheet. Tell us your metro, area, budget, and move date &mdash; we'll send you the top matches by text or email.</p>
+  <a href="./cheat-sheet.html" class="btn-gold">Get My Cheat Sheet</a>
+</div>
+
+<div id="dp-footer"></div>
+<script>
+const S = window.SITE;
+function buildGrid(metroId, areas) {
+  const grid = document.getElementById('grid-' + metroId);
+  if (!grid) return;
+  areas.forEach(area => {
+    const card = document.createElement('div');
+    card.className = 'area-card';
+    card.innerHTML = `
+      <div class="area-name">${area}</div>
+      <span class="db-note">Private Database</span>
+      <br><a class="area-link" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal('${area} Listings','<p>In the live site, this link opens a private SmartApartmentData search filtered for <strong>${area}</strong> &mdash; showing top-paying properties updated weekly by the Dillard team.</p><p style=\\'margin-top:12px;\\'>For a personalized list, <a href=\\'./cheat-sheet.html\\' style=\\'color:var(--teal);\\'>get the Cheat Sheet</a>.</p>')">View Current Listings &rarr;</a>`;
+    grid.appendChild(card);
+  });
+}
+if (S) {
+  S.metros.forEach(m => buildGrid(m.id, m.areas));
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="./js/anim.js"></script>
+<script src="./js/modal.js"></script>
+<script src="./js/layout.js"></script>
+</body>
+</html>
