@@ -20,7 +20,7 @@
           '</button>' +
           '<div class="dp-menu" id="dp-menu">' +
             navLinks +
-            '<a href="./cheat-sheet.html" class="dp-nav-cta">Get the Cheat Sheet</a>' +
+            '<a href="./cheat-sheet.html" class="dp-nav-cta">Get personalized recommendations</a>' +
           '</div>' +
         '</div>' +
       '</nav>';
@@ -34,7 +34,7 @@
           '<div class="dp-footer-brand">' +
             '<img src="./img/logo.jpg" alt="Dillard logo">' +
             '<div class="dp-footer-name">Dillard Property Services</div>' +
-            '<p class="dp-footer-sub">Finding the right apartment in Austin, DFW, Houston and San Antonio since 2004.<br><br>512-640-2443<br>masterleads@dillardpropertyservices.com</p>' +
+            '<p class="dp-footer-sub">Apartment and condo rentals in Greater Austin, DFW, Houston, and San Antonio.<br><br>17+ years<br>512-640-2443<br>info@dillardpropertyservices.com</p>' +
           '</div>' +
           '<div>' +
             '<div class="dp-footer-label">Navigate</div>' +
@@ -43,11 +43,11 @@
           '<div>' +
             '<div class="dp-footer-label">Metros</div>' +
             S.metros.map(function (m) { return '<a href="./availabilities.html#' + m.id + '" class="dp-footer-link">' + m.name + '</a>'; }).join('') +
-            '<div style="margin-top:20px;"><a href="' + S.zillowReviews + '" target="_blank" rel="noopener" class="dp-footer-link" style="color:var(--gold);font-weight:600;">100+ Reviews on Zillow &rarr;</a></div>' +
+            '<div style="margin-top:20px;"><a href="' + S.zillowReviews + '" target="_blank" rel="noopener" class="dp-footer-link" style="color:var(--gold);font-weight:600;">Over 100 5-star reviews on Zillow</a></div>' +
           '</div>' +
         '</div>' +
         '<div class="dp-footer-bar">' +
-          '<span>&copy; ' + new Date().getFullYear() + ' Dillard Property Services &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Texas Licensed Real Estate</span>' +
+          '<span>&copy; ' + new Date().getFullYear() + ' Dillard Property Services</span>' +
           '<span>Built by <a href="https://thetribemaker.com" target="_blank" rel="noopener">The Tribe Maker</a></span>' +
         '</div>' +
       '</footer>';
