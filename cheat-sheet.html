@@ -3,20 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dillard's Cheat Sheet — Free Texas Apartment Guide</title>
-<meta name="description" content="Get Dillard's Cheat Sheet — used by thousands of Texans over 7 years. Top apartments in Austin, DFW, Houston and San Antonio, from a private database.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dillard's Cheat Sheet — Free Texas Apartment Guide">
-<meta property="og:description" content="Thousands of Texans have used it. A private database. Top properties for your area and budget, delivered weekly.">
+<title>Cheat Sheet — Dillard Property Services</title>
+<meta name="description" content="The latest most targeted personalized information for our clients. Updated at your request.">
+<meta property="og:title" content="Cheat Sheet — Dillard Property Services">
+<meta property="og:description" content="The latest most targeted personalized information for our clients. Updated at your request.">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
-<meta property="og:image:alt" content="Chris and Meg Dillard">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<meta property="og:image:alt" content="Meg and Chris Dillard">
 <link rel="icon" type="image/jpeg" href="./img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="./css/system.css">
 <script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
 <script src="./js/site.js"></script>
@@ -28,81 +24,80 @@
     <img class="cover-img" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1600&q=80" alt="" width="1600" height="1067">
     <div class="scrim"></div>
     <div class="hero-inner">
-      <p class="kicker">Free Resource</p>
-      <h1>Dillard's Cheat Sheet</h1>
-      <p class="lede">Used by thousands of Texans over the last 7 years. We pull from a master database that is not public and give you the top properties each week in the area you're looking in.</p>
+      <p class="kicker">Cheat Sheet</p>
+      <h1>The latest most targeted personalized information for our clients.</h1>
+      <p class="lede">Updated at your request. Over 5,000 Texas properties in DFW, Houston, Austin, and San Antonio.</p>
     </div>
   </header>
 
   <section class="band band-light" data-snap aria-label="Cheat Sheet form">
     <div class="container form-wrap">
-      <div class="form-card reveal">
-        <h2>Get Your Cheat Sheet</h2>
-        <p class="form-desc">Fill out the form below. We'll follow up with personalized recommendations.</p>
-        <form id="cheat-form" onsubmit="handleCheatSubmit(event)">
+      <div class="form-card">
+        <h2>Tell us what you need.</h2>
+        <p class="form-desc">Once you submit, you'll be forwarded to our latest availabilities. Thousands of properties.</p>
+        <form id="cheat-form" action="./availabilities.html" method="get">
           <div class="form-row">
-            <div class="form-group"><label>First Name *</label><input type="text" name="firstName" required placeholder="Chris"></div>
-            <div class="form-group"><label>Last Name *</label><input type="text" name="lastName" required placeholder="Smith"></div>
+            <div class="form-group"><label for="firstName">First name</label><input id="firstName" type="text" name="firstName" required autocomplete="given-name"></div>
+            <div class="form-group"><label for="lastName">Last name</label><input id="lastName" type="text" name="lastName" required autocomplete="family-name"></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Phone (Text preferred) *</label><input type="tel" name="phone" required placeholder="512-555-0100"></div>
-            <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="you@email.com"></div>
+            <div class="form-group"><label for="phone">Phone</label><input id="phone" type="tel" name="phone" required autocomplete="tel"></div>
+            <div class="form-group"><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
           </div>
           <div class="form-group">
-            <label>Metro *</label>
+            <label for="cs-metro">Metro</label>
             <select name="metro" id="cs-metro" required onchange="updateAreas(this.value)">
-              <option value="">Select a Metro...</option>
+              <option value="">Select a metro</option>
               <option value="Austin">Austin</option>
-              <option value="DFW">DFW (Dallas / Fort Worth)</option>
+              <option value="DFW">DFW</option>
               <option value="Houston">Houston</option>
               <option value="San Antonio">San Antonio</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Area *</label>
+            <label for="cs-area">Area</label>
             <select name="area" id="cs-area" required>
-              <option value="">Select Metro first...</option>
+              <option value="">Select a metro first</option>
             </select>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Budget (Monthly Rent) *</label><input type="text" name="budget" required placeholder="$1,200 – $1,800"></div>
-            <div class="form-group"><label>Bedrooms *</label>
-              <select name="bedrooms" required>
-                <option value="">Select...</option>
+            <div class="form-group"><label for="budget">Monthly budget</label><input id="budget" type="text" name="budget" required></div>
+            <div class="form-group"><label for="bedrooms">Bedrooms</label>
+              <select id="bedrooms" name="bedrooms" required>
+                <option value="">Select</option>
                 <option>Studio</option><option>1 Bed</option><option>2 Bed</option><option>3 Bed</option><option>4+ Bed</option>
               </select>
             </div>
           </div>
-          <div class="form-group"><label>Move Date *</label><input type="text" name="moveDate" required placeholder="July 1, 2025"></div>
-          <div class="form-group"><label>Details / Preferences</label><textarea name="details" placeholder="Pet friendly, pool, gym, gated, near X highway, must-have parking..."></textarea></div>
-          <div class="consent-block">
-            <strong>SMS Consent:</strong> I agree to receive numerous text messages regarding rentals from Dillard Properties at the number I provided. Msg &amp; data rates may apply. Reply STOP to no longer receive messages. Message frequency varies. Text HELP to 512-640-2443 or email <a href="mailto:masterleads@dillardpropertyservices.com">masterleads@dillardpropertyservices.com</a> for assistance. View our <a href="./contact.html">Terms of Service and Privacy Policy</a>.
-          </div>
-          <button type="submit" class="btn-submit">Send My Request</button>
+          <div class="form-group"><label for="moveDate">Move date</label><input id="moveDate" type="text" name="moveDate" required></div>
+          <div class="form-group"><label for="details">Details</label><textarea id="details" name="details"></textarea></div>
+          <p class="consent-block">Message and data rates may apply. Reply STOP to opt out. Text HELP to 512-640-2443 or email <a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a>.</p>
+          <button type="submit" class="btn-submit">Get personalized recommendations</button>
         </form>
       </div>
-      <div class="side-content reveal">
-        <h3>What You'll Receive</h3>
-        <p>After you submit, <a href="mailto:ChrisD@dillardpropertyservices.com">ChrisD@dillardpropertyservices.com</a> will follow up with personalized recommendations for your area, from our private database.</p>
-        <div class="proof-item"><div class="proof-icon"><i class="fa-solid fa-database"></i></div><div class="proof-text"><strong>Private Database Access</strong><span>Non-public listings not available to the general public. Newer properties, better deals.</span></div></div>
-        <div class="proof-item"><div class="proof-icon"><i class="fa-solid fa-calendar-week"></i></div><div class="proof-text"><strong>Updated Weekly</strong><span>We refresh our top properties list every week so the information you receive is current.</span></div></div>
-        <div class="proof-item"><div class="proof-icon"><i class="fa-solid fa-star"></i></div><div class="proof-text"><strong>100+ Five-Star Reviews</strong><span>Verified Zillow reviews from real Texas renters who found their home with us.</span></div></div>
+      <div class="side-content">
+        <h3>What you can expect</h3>
+        <p>The latest most targeted personalized information for our clients. Updated at your request.</p>
+        <div class="proof-item"><div class="proof-text"><strong>Updated weekly</strong><span>Well researched availabilities.</span></div></div>
+        <div class="proof-item"><div class="proof-text"><strong>Over 5,000 Texas properties</strong><span>DFW, Houston, Austin, and San Antonio.</span></div></div>
+        <div class="proof-item"><div class="proof-text"><strong>Over 100 5-star reviews on Zillow</strong><span>We pride ourselves in client feedback. When you're happy, we're happy.</span></div></div>
+        <p>512-640-2443<br><a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a></p>
       </div>
     </div>
+  </section>
+
+  <section class="cheat-banner" data-snap aria-label="Areas">
+    <h2>Greater Austin. DFW. Houston. San Antonio.</h2>
+    <p>Find what you want where you want it.</p>
+    <a href="./cities.html" class="btn">We serve the following towns</a>
   </section>
 </main>
 <div id="dp-footer"></div>
 <script>
-var AREAS = window.SITE ? window.SITE.cheatSheetAreas : {
-  "Austin":["Downtown Austin","South Congress","East Austin","North Austin","Round Rock","Cedar Park","Georgetown","Mueller","Other"],
-  "DFW":["Uptown Dallas","Frisco","Plano","McKinney","Arlington","Irving","Las Colinas","Fort Worth","Addison","Richardson","Allen","Flower Mound","Lewisville","Other"],
-  "Houston":["Midtown Houston","Montrose","The Heights","Medical Center","Galleria","Energy Corridor","Sugar Land","The Woodlands","Katy","Pearland","Other"],
-  "San Antonio":["Downtown SA","Pearl District","Stone Oak","Medical Center SA","Alamo Heights","Northeast SA","Northwest SA","Other"]
-};
 function updateAreas(metro) {
   var sel = document.getElementById('cs-area');
-  sel.innerHTML = '<option value="">Select an area...</option>';
-  var areas = AREAS[metro] || [];
+  var areas = (window.SITE && window.SITE.cheatSheetAreas[metro]) || [];
+  sel.innerHTML = '<option value="">Select an area</option>';
   areas.forEach(function (a) {
     var o = document.createElement('option');
     o.value = a;
@@ -110,16 +105,7 @@ function updateAreas(metro) {
     sel.appendChild(o);
   });
 }
-function handleCheatSubmit(e) {
-  e.preventDefault();
-  var data = new FormData(e.target);
-  showPrototypeModal(
-    'Request Received!',
-    '<p>Thank you, <strong>' + data.get('firstName') + '</strong>! Your Cheat Sheet request for <strong>' + data.get('metro') + ' &mdash; ' + data.get('area') + '</strong> has been submitted.</p><p style="margin-top:12px;">In the live site, an auto-responder from <strong>ChrisD@dillardpropertyservices.com</strong> would confirm receipt immediately, and Chris would follow up within 24 hours with personalized recommendations.</p>'
-  );
-}
 </script>
-<script src="./js/modal.js"></script>
 <script src="./js/layout.js"></script>
 <script src="./js/motion.js"></script>
 <script src="./js/chapter-nav.js"></script>

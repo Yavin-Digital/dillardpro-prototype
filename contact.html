@@ -3,19 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact Dillard Property Services</title>
-<meta name="description" content="Contact Dillard Property Services for personalized apartment recommendations in Austin, DFW, Houston and San Antonio.">
-<meta property="og:type" content="website">
+<title>Contact — Dillard Property Services</title>
+<meta name="description" content="We are the leader in apartment and condo rentals in the state of Texas. Call 512-640-2443.">
 <meta property="og:title" content="Contact — Dillard Property Services">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
-<meta property="og:image:alt" content="Chris and Meg Dillard">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<meta property="og:image:alt" content="Meg and Chris Dillard">
 <link rel="icon" type="image/jpeg" href="./img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="./css/system.css">
 <script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
 <script src="./js/site.js"></script>
@@ -27,51 +23,56 @@
     <img class="cover-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80" alt="" width="1600" height="1067">
     <div class="scrim"></div>
     <div class="hero-inner">
-      <p class="kicker">Get in Touch</p>
-      <h1>Contact Dillard Property Services</h1>
-      <p class="lede">Tell us your metro, area, budget, bedrooms, and move date. We respond fast.</p>
+      <p class="kicker">Contact</p>
+      <h1>We are the leader in apartment and condo rentals in the state of Texas.</h1>
+      <p class="lede">In the past 17+ years our company has helped people with their apartment and condo rental needs. Over 100 5-star reviews on Zillow.</p>
     </div>
   </header>
 
   <section class="band band-light" data-snap aria-label="Contact form">
     <div class="container form-wrap">
       <div class="form-card">
-        <h2>Send Us a Message</h2>
-        <p class="form-desc">Fill out the form below. It goes into our lead system and we follow up with personalized recommendations.</p>
-        <div class="keap-embed-wrapper">
-          <script type="text/javascript" src="https://fk130.infusionsoft.com/app/form/iframe/20b6a3945ae033f3c2212c5cdf14a26d"></script>
-          <noscript>
-            <a href="https://www.dillardpropertyservices.com/contact" style="font-size:0.85rem;color:#000;">Click here to open the contact form</a>
-          </noscript>
-        </div>
-        <div class="consent-block">
-          <strong>SMS / Text Consent:</strong> I agree to receive numerous text messages regarding rentals from Dillard Properties at the number I provided. Msg &amp; data rates may apply. Reply STOP to no longer receive messages. Message frequency varies. Text HELP to 512-640-2443 or email <a href="mailto:masterleads@dillardpropertyservices.com">masterleads@dillardpropertyservices.com</a> for assistance. View our Terms of Service and Privacy Policy.
-        </div>
+        <h2>Send a note.</h2>
+        <p class="form-desc">Once you submit, you'll be forwarded to our latest availabilities. Thousands of properties.</p>
+        <form action="./availabilities.html" method="get">
+          <div class="form-row">
+            <div class="form-group"><label for="firstName">First name</label><input id="firstName" type="text" name="firstName" required autocomplete="given-name"></div>
+            <div class="form-group"><label for="lastName">Last name</label><input id="lastName" type="text" name="lastName" required autocomplete="family-name"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="phone">Phone</label><input id="phone" type="tel" name="phone" required autocomplete="tel"></div>
+            <div class="form-group"><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+          </div>
+          <div class="form-group">
+            <label for="metro">Metro</label>
+            <select id="metro" name="metro" required>
+              <option value="">Select a metro</option>
+              <option>Austin</option>
+              <option>DFW</option>
+              <option>Houston</option>
+              <option>San Antonio</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="note">What you need</label><textarea id="note" name="note" required></textarea></div>
+          <p class="consent-block">Message and data rates may apply. Reply STOP to opt out. Text HELP to 512-640-2443 or email <a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a>.</p>
+          <button type="submit" class="btn-submit">Get personalized recommendations</button>
+        </form>
       </div>
-
-      <div class="side-info">
-        <h3>Reach Us</h3>
-        <div class="contact-method reveal">
-          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <strong>Phone</strong>
-            <span>512-640-2443</span>
-          </div>
-        </div>
-        <div class="contact-method reveal">
-          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div>
-            <strong>Email</strong>
-            <span><a href="mailto:masterleads@dillardpropertyservices.com">masterleads@dillardpropertyservices.com</a> — Include your metro, area, budget, bedrooms, and move date for the fastest response.</span>
-          </div>
-        </div>
-        <div class="remember">
-          <h4 style="font-family:Montserrat,sans-serif;color:var(--red);margin-bottom:10px;">Before You Send</h4>
-          <p style="color:rgba(255,255,255,0.78);">To get the fastest, most accurate response, include: <strong style="color:var(--red);">Metro (Austin / DFW / Houston / SA), Area, Monthly Budget, Bedrooms needed, and Move Date.</strong></p>
-          <p style="margin-top:10px;color:rgba(255,255,255,0.78);">Or use the <a href="./cheat-sheet.html" style="color:var(--red);font-weight:700;">Cheat Sheet form</a> — it's designed to capture exactly what we need.</p>
-        </div>
+      <div class="side-content">
+        <img class="couple" src="./img/chris-meg.jpg" alt="Meg and Chris Dillard" width="1926" height="1778">
+        <h3>Meg &amp; Chris Dillard</h3>
+        <p><a href="tel:15126402443">512-640-2443</a></p>
+        <p><a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a></p>
+        <p>Greater Austin area. DFW area, Houston area, San Antonio area.</p>
+        <p><a href="https://www.zillow.com/profile/chrisdillard00/" target="_blank" rel="noopener">Over 100 5-star reviews on Zillow</a></p>
       </div>
     </div>
+  </section>
+
+  <section class="cheat-banner" data-snap aria-label="Cheat Sheet">
+    <h2>The latest most targeted personalized information for our clients.</h2>
+    <p>Updated at your request.</p>
+    <a href="./cheat-sheet.html" class="btn">Get personalized recommendations</a>
   </section>
 </main>
 <div id="dp-footer"></div>
