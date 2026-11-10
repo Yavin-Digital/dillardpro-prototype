@@ -184,14 +184,16 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-d); font-weight: 800; letter
   font-family: var(--font-d);
   font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   text-decoration: none;
   color: #000;
   background: var(--red);
-  padding: 10px 14px;
+  padding: 10px 12px;
   border-radius: 4px;
   white-space: nowrap;
+  line-height: 1.2;
+  text-align: center;
 }
 .dp-nav-cta:hover { background: var(--red-deep); }
 @media (max-width: 1023px) {
@@ -1081,6 +1083,45 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-d); font-weight: 800; letter
 .quiet { opacity: 0.6; }
 .keap-embed-wrapper { min-height: 400px; }
 .keap-embed-wrapper iframe { width: 100%; border: 0; min-height: 400px; }
+
+.town-list {
+  list-style: none;
+  display: grid;
+  gap: 8px 16px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+.town-list li {
+  background: #fff;
+  padding: 12px 14px;
+  font-family: var(--font-d);
+  font-weight: 700;
+  border-bottom: 3px solid var(--red);
+}
+.map-grid { display: grid; gap: 14px; margin-top: 28px; }
+.map-card { margin: 0; background: #fff; }
+.map-card img { width: 100%; height: auto; display: block; }
+.map-card figcaption {
+  font-family: var(--font-d);
+  font-weight: 700;
+  padding: 10px 12px 14px;
+}
+.review-shot { width: 100%; height: auto; display: block; margin: 0 0 16px; background: #fff; }
+.floor-wrap { display: grid; gap: 28px; align-items: center; }
+.floor-wrap img { width: min(100%, 360px); height: auto; margin: 0 auto; background: #fff; }
+.couple { width: min(100%, 280px); height: auto; display: block; margin: 0 0 16px; }
+@media (min-width: 640px) {
+  .town-list { grid-template-columns: 1fr 1fr; }
+  .map-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 800px) {
+  .floor-wrap { grid-template-columns: 320px 1fr; }
+  .floor-wrap img { margin: 0; }
+}
+@media (min-width: 1024px) {
+  .town-list { grid-template-columns: repeat(4, 1fr); }
+  .map-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

@@ -21,7 +21,7 @@ Crawled 2026-11-10 from the KEEP urls in `references/url-index.md`. Destination 
 | `/home`, `/new` | "TEXT ME NOW" | Button | DROP | Mike: do not advertise that everything is done by text or email only. | None. Button is "Get personalized recommendations". |
 | `/contact` | "Once You Submit, you'll be forwarded to our latest availabilities. Thousands of properties." | Form result | USE | Official post-submit line. | Contact, cheat sheet submit |
 | `/contact` | Same leader, 17+ years, 100,000 people, and Zillow lines as the homepage | Intro | REWRITE | Same people-served conflict. | Contact. Number omitted. |
-| `/blank-1-1` Cities | "We serve the following towns." and the 99-town list | List | USE | Official town list, names unchanged. | Cities |
+| `/blank-1-1` Cities | "We serve the following towns." and the 100-town list | List | USE | Official town list, names unchanged. | Cities |
 | `/blank-1` Availabilities and `/blank-1-2` Available | Neighborhood groups for Houston, Dallas, Fort Worth, Austin, and San Antonio | List | USE | Same groups on both URLs. Available only breaks a few lines apart. | Availabilities, cheat sheet area menu, home city chapters |
 | `/blank-1` | Four skyline and River Walk screenshots | Photo | DROP | About 350–630 pixels, and they read as stock skylines. Current heroes stay. | None |
 | `/blank-1-1-1` Areas | 18 labeled DFW maps | Map | USE | Official area maps. Too small to full-bleed. | Cities |

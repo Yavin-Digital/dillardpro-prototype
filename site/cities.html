@@ -3,19 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Texas Apartments by City — Austin, DFW, Houston, San Antonio | Dillard</title>
-<meta name="description" content="Find apartments by city in Texas. Dillard Property Services covers Austin, DFW, Houston and San Antonio, with personalized recommendations from a private database.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Texas Apartments by City — Dillard Property Services">
+<title>Cities — Dillard Property Services</title>
+<meta name="description" content="We serve the following towns across Greater Austin, DFW, Houston, and San Antonio.">
+<meta property="og:title" content="Cities — Dillard Property Services">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
-<meta property="og:image:alt" content="Chris and Meg Dillard">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
+<meta property="og:image:alt" content="Meg and Chris Dillard">
 <link rel="icon" type="image/jpeg" href="./img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="./css/system.css">
 <script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
 <script src="./js/site.js"></script>
@@ -27,89 +23,159 @@
     <img class="cover-img" src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=1600&q=80" alt="" width="1600" height="1067">
     <div class="scrim"></div>
     <div class="hero-inner">
-      <p class="kicker">Search by City</p>
-      <h1>Texas Apartments by City</h1>
-      <p class="lede">We serve every major city in Austin, DFW, Houston, and San Antonio. Select your metro and city below to see current properties from our private database.</p>
+      <p class="kicker">Cities</p>
+      <h1>We serve the following towns.</h1>
+      <p class="lede">Greater Austin area. DFW area, Houston area, San Antonio area.</p>
       <div class="btn-row">
-        <a href="./cheat-sheet.html" class="btn">Get a Personalized Match</a>
+        <a href="./cheat-sheet.html" class="btn">Get personalized recommendations</a>
       </div>
     </div>
   </header>
 
-  <div data-snap aria-label="City listings">
-  <div class="city-tabs">
-    <div class="city-tabs-inner">
-      <button type="button" class="city-tab active" onclick="showCity('austin',this)">Austin</button>
-      <button type="button" class="city-tab" onclick="showCity('dfw',this)">Dallas / Fort Worth</button>
-      <button type="button" class="city-tab" onclick="showCity('houston',this)">Houston</button>
-      <button type="button" class="city-tab" onclick="showCity('sanantonio',this)">San Antonio</button>
-    </div>
-  </div>
-
-  <section id="city-austin" class="city-section active-section">
+  <section class="band band-light" data-snap aria-label="Towns">
     <div class="container">
-      <div class="city-section-header">
-        <h2>Apartments in <span>Austin</span></h2>
-        <p>From the lively East Austin scene to the family-friendly suburbs of Round Rock and Cedar Park — we know every Austin neighborhood at the block level.</p>
-      </div>
-      <div class="city-grid" id="cgrid-austin"></div>
+      <p class="kicker">Towns</p>
+      <h2 class="section-title">Greater Austin, DFW, Houston, and San Antonio.</h2>
+      <ul class="town-list">
+        <li>Addison</li>
+        <li>Alamo Heights</li>
+        <li>Allen</li>
+        <li>Alvin</li>
+        <li>Angleton</li>
+        <li>Arlington</li>
+        <li>Atascocita</li>
+        <li>Austin</li>
+        <li>Azle</li>
+        <li>Balch Springs</li>
+        <li>Balcones Heights</li>
+        <li>Bandera</li>
+        <li>Barton Creek</li>
+        <li>Baytown</li>
+        <li>Bedford</li>
+        <li>Bellaire</li>
+        <li>Boerne</li>
+        <li>Brenham</li>
+        <li>Brookshire</li>
+        <li>Canyon Lake</li>
+        <li>Castroville</li>
+        <li>Cedar Hill</li>
+        <li>Cedar Park</li>
+        <li>Channelview</li>
+        <li>Cinco Ranch</li>
+        <li>Clear Lake Shores</li>
+        <li>College Station</li>
+        <li>Coppell</li>
+        <li>Corpus Christi</li>
+        <li>Dallas</li>
+        <li>Deer Park</li>
+        <li>Denton</li>
+        <li>Dickinson</li>
+        <li>Dripping Springs</li>
+        <li>Duncanville</li>
+        <li>Eagle Lake</li>
+        <li>Ennis</li>
+        <li>Fair Oaks Ranch</li>
+        <li>Farmers Branch</li>
+        <li>Flower Mound</li>
+        <li>Forney</li>
+        <li>Fort Worth</li>
+        <li>Freeport</li>
+        <li>Friendswood</li>
+        <li>Frisco</li>
+        <li>Fulshear</li>
+        <li>Galena Park</li>
+        <li>Galveston</li>
+        <li>Garland</li>
+        <li>Grand Prairie</li>
+        <li>Greatwood</li>
+        <li>Hempstead</li>
+        <li>Highland Park</li>
+        <li>Highland Village</li>
+        <li>Hitchcock</li>
+        <li>Houston</li>
+        <li>Humble</li>
+        <li>Huntsville</li>
+        <li>Hurst</li>
+        <li>Jersey Village</li>
+        <li>Katy</li>
+        <li>Kerrville</li>
+        <li>League City</li>
+        <li>Leon Valley</li>
+        <li>Lewisville</li>
+        <li>McKinney</li>
+        <li>Mansfield</li>
+        <li>Marble Falls</li>
+        <li>Meadows Place</li>
+        <li>Mesquite</li>
+        <li>Missouri City</li>
+        <li>Montgomery</li>
+        <li>Nassau Bay</li>
+        <li>North Richland Hills</li>
+        <li>Pasadena</li>
+        <li>Pearland</li>
+        <li>Pflugerville</li>
+        <li>Richmond</li>
+        <li>Rosenberg</li>
+        <li>San Antonio</li>
+        <li>Seabrook</li>
+        <li>Sealy</li>
+        <li>Shavano Park</li>
+        <li>Sherman</li>
+        <li>Southlake</li>
+        <li>Stafford</li>
+        <li>Sugar Land</li>
+        <li>Texas City</li>
+        <li>The Colony</li>
+        <li>The Woodlands</li>
+        <li>Trophy Club</li>
+        <li>University Park</li>
+        <li>Waxahachie</li>
+        <li>Weatherford</li>
+        <li>Westlake</li>
+        <li>West Lake Hills</li>
+        <li>Wharton</li>
+        <li>White Oak</li>
+        <li>Wimberly</li>
+        <li>Wylie</li>
+      </ul>
     </div>
   </section>
 
-  <section id="city-dfw" class="city-section">
+  <section class="band band-white" data-snap aria-label="Area maps">
     <div class="container">
-      <div class="city-section-header">
-        <h2>Apartments in <span>Dallas / Fort Worth</span></h2>
-        <p>The Metroplex has 20+ distinct markets — from Uptown Dallas to Frisco to Fort Worth. We match you to the right city for your commute, lifestyle, and budget.</p>
+      <p class="kicker">Areas</p>
+      <h2 class="section-title">More targeted geo directed search results.</h2>
+      <p class="lede">Find what you want where you want it.</p>
+      <div class="map-grid">
+        <figure class="map-card"><img src="./img/maps/dallas-downtown.jpg" alt="Map of Downtown Dallas" width="600" height="420" loading="lazy"><figcaption>Downtown Dallas</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/dallas-uptown.jpg" alt="Map of Uptown Dallas" width="600" height="420" loading="lazy"><figcaption>Uptown Dallas</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/dallas-midtown.jpg" alt="Map of Dallas Midtown" width="600" height="420" loading="lazy"><figcaption>Dallas Midtown</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/dallas-east.jpg" alt="Map of East Dallas" width="600" height="420" loading="lazy"><figcaption>East Dallas</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/dallas-farmers-market-deep-ellum.jpg" alt="Map of Farmers Market and Deep Ellum" width="600" height="420" loading="lazy"><figcaption>Farmers Market and Deep Ellum</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/dallas-knox-henderson.jpg" alt="Map of Knox Henderson" width="600" height="420" loading="lazy"><figcaption>Knox Henderson</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/dallas-highland-park-park-cities.jpg" alt="Map of Highland Park and the Park Cities" width="600" height="420" loading="lazy"><figcaption>Highland Park and the Park Cities</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/dallas-medical-design-districts.jpg" alt="Map of Medical and Design Districts" width="600" height="420" loading="lazy"><figcaption>Medical and Design Districts</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/downtown-fort-worth.jpg" alt="Map of Downtown Fort Worth" width="600" height="420" loading="lazy"><figcaption>Downtown Fort Worth</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/las-colinas.jpg" alt="Map of Las Colinas" width="600" height="420" loading="lazy"><figcaption>Las Colinas</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/valley-ranch.jpg" alt="Map of Valley Ranch" width="600" height="420" loading="lazy"><figcaption>Valley Ranch</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/north-irving.jpg" alt="Map of North Irving" width="600" height="420" loading="lazy"><figcaption>North Irving</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/south-irving.jpg" alt="Map of South Irving" width="600" height="420" loading="lazy"><figcaption>South Irving</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/allen.jpg" alt="Map of Allen" width="600" height="420" loading="lazy"><figcaption>Allen</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/frisco.jpg" alt="Map of Frisco" width="600" height="420" loading="lazy"><figcaption>Frisco</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/mckinney.jpg" alt="Map of McKinney" width="600" height="420" loading="lazy"><figcaption>McKinney</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/central-plano.jpg" alt="Map of Central Plano" width="600" height="420" loading="lazy"><figcaption>Central Plano</figcaption></figure>
+        <figure class="map-card"><img src="./img/maps/west-plano.jpg" alt="Map of West Plano" width="600" height="420" loading="lazy"><figcaption>West Plano</figcaption></figure>
       </div>
-      <div class="city-grid" id="cgrid-dfw"></div>
     </div>
   </section>
 
-  <section id="city-houston" class="city-section">
-    <div class="container">
-      <div class="city-section-header">
-        <h2>Apartments in <span>Houston</span></h2>
-        <p>From Midtown's walkable culture to The Woodlands' master-planned communities — Houston is Texas's most diverse rental market and we know every corner of it.</p>
-      </div>
-      <div class="city-grid" id="cgrid-houston"></div>
-    </div>
+  <section class="cheat-banner" data-snap aria-label="Personalized recommendations">
+    <h2>Over 5,000 Texas properties.</h2>
+    <p>DFW, Houston, Austin, and San Antonio.</p>
+    <a href="./cheat-sheet.html" class="btn">Get personalized recommendations</a>
   </section>
-
-  <section id="city-sanantonio" class="city-section">
-    <div class="container">
-      <div class="city-section-header">
-        <h2>Apartments in <span>San Antonio</span></h2>
-        <p>The Alamo City is one of the fastest-growing rental markets in Texas. We cover every major submarket from the Pearl District to Stone Oak.</p>
-      </div>
-      <div class="city-grid" id="cgrid-san-antonio"></div>
-    </div>
-  </section>
-  </div>
 </main>
 <div id="dp-footer"></div>
-<script>
-function showCity(id, tab) {
-  document.querySelectorAll('.city-section').forEach(function (s) { s.classList.remove('active-section'); });
-  document.querySelectorAll('.city-tab').forEach(function (t) { t.classList.remove('active'); });
-  document.getElementById('city-' + id).classList.add('active-section');
-  tab.classList.add('active');
-}
-function buildCityGrid(gridId, areas) {
-  var g = document.getElementById(gridId);
-  if (!g) return;
-  areas.forEach(function (a) {
-    g.insertAdjacentHTML('beforeend', '<a class="city-card" href="./cheat-sheet.html" onclick="event.preventDefault();showPrototypeModal(\'' + a + ' Apartments\',\'<p>In the live site this would open a dedicated page for <strong>apartments in ' + a + '</strong> with availability from our private database.</p><p style=&quot;margin-top:12px;&quot;>For personalized recommendations, <a href=&quot;./cheat-sheet.html&quot; style=&quot;color:#000;&quot;>get the Cheat Sheet</a>.</p>\')"><div class="city-card-icon"><i class="fa-solid fa-map-pin"></i></div><div class="city-card-name">' + a + '</div><div class="city-card-meta">Apartments · Condos · Private Database</div><div class="city-card-action">View Listings</div></a>');
-  });
-}
-if (window.SITE) {
-  buildCityGrid('cgrid-austin', window.SITE.metros.find(function (m) { return m.id === 'austin'; }).areas);
-  buildCityGrid('cgrid-dfw', window.SITE.metros.find(function (m) { return m.id === 'dfw'; }).areas);
-  buildCityGrid('cgrid-houston', window.SITE.metros.find(function (m) { return m.id === 'houston'; }).areas);
-  buildCityGrid('cgrid-san-antonio', window.SITE.metros.find(function (m) { return m.id === 'san-antonio'; }).areas);
-}
-</script>
-<script src="./js/modal.js"></script>
 <script src="./js/layout.js"></script>
 <script src="./js/motion.js"></script>
 <script src="./js/chapter-nav.js"></script>
