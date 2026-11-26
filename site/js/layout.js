@@ -2,6 +2,24 @@
   const S = window.SITE;
   if (!S) return;
 
+
+  function contactLinesHTML() {
+    const offices = (S.offices || []).map(function (o) {
+      return '<div class="contact-line">' +
+        '<span class="contact-line-label">' + o.name + '</span>' +
+        '<a class="tap-link" href="' + o.href + '">' + o.phone + '</a>' +
+      '</div>';
+    }).join('');
+    return '<div class="contact-lines">' +
+      '<div class="contact-line">' +
+        '<span class="contact-line-label">Text</span>' +
+        '<a class="tap-link" href="' + (S.phoneHref || ('sms:+1' + String(S.phone).replace(/\D/g, ''))) + '">' + S.phone + '</a>' +
+      '</div>' +
+      '<p class="contact-lines-heading">Office lines</p>' +
+      offices +
+    '</div>';
+  }
+
   const navLinks = S.nav.map(function (n) {
     return '<a href="' + n.href + '" class="dp-nav-link">' + n.label + '</a>';
   }).join('');
@@ -34,7 +52,9 @@
           '<div class="dp-footer-brand">' +
             '<img src="./img/logo.jpg" alt="Dillard logo">' +
             '<div class="dp-footer-name">Dillard Property Services</div>' +
-            '<p class="dp-footer-sub">Apartment and condo rentals in Greater Austin, DFW, Houston, and San Antonio.<br><br>17+ years<br>512-640-2443<br>info@dillardpropertyservices.com</p>' +
+            '<p class="dp-footer-sub">Apartment and condo rentals in Greater Austin, DFW, Houston, and San Antonio.<br><br>17+ years</p>' +
+            contactLinesHTML() +
+            '<p class="dp-footer-sub"><a class="tap-link" href="mailto:' + S.email + '">' + S.email + '</a></p>' +
           '</div>' +
           '<div>' +
             '<div class="dp-footer-label">Navigate</div>' +
@@ -48,12 +68,20 @@
         '</div>' +
         '<div class="dp-footer-bar">' +
           '<span>&copy; ' + new Date().getFullYear() + ' Dillard Property Services</span>' +
+          '<span class="dp-footer-legal">' +
+            '<a href="./privacy.html">Privacy Policy</a>' +
+            '<a href="./terms.html">Terms of Use</a>' +
+          '</span>' +
           '<span>Built by <a href="https://thetribemaker.com" target="_blank" rel="noopener">The Tribe Maker</a></span>' +
         '</div>' +
       '</footer>';
   }
 
-  document.querySelectorAll('.dp-nav-link').forEach(function (a) {
+  document.querySelectorAll('[data-contact-lines]').forEach(function (el) {
+    el.innerHTML = contactLinesHTML();
+  });
+
+  document.querySelectorAll('.dp-nav-link, .dp-footer-legal a').forEach(function (a) {
     const href = a.getAttribute('href').replace('./', '');
     if (location.pathname.endsWith(href) || (href === 'index.html' && (location.pathname.endsWith('/') || location.pathname === ''))) {
       a.classList.add('active');

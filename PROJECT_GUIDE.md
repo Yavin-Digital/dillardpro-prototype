@@ -11,7 +11,9 @@ Dillard Property Services client prototype. Black and red, Montserrat for displa
 | `availabilities.html` | Neighborhood groups for Austin, DFW, Houston, and San Antonio, plus the published floor plan |
 | `cities.html` | The town list and the DFW area maps |
 | `reviews.html` | Six Zillow reviews taken from the live screenshots, with the Zillow profile |
-| `contact.html` | Phone, email, Meg and Chris portrait, and the same request form |
+| `contact.html` | Text and office lines, email, Meg and Chris portrait, and the same request form |
+| `privacy.html` | Draft Privacy Policy for client and legal review |
+| `terms.html` | Draft Terms of Use for client and legal review |
 | `about.html` | Meta refresh to `index.html` |
 
 ## Motion
@@ -20,10 +22,11 @@ Desktop wheel and keyboard move one section at a time. A section taller than the
 
 ## Copy
 
-Official lines come from dillardpropertyservices.com. The button label is "Get personalized recommendations." Do not publish a people-served total (the live site conflicts; see `NOTES.md`). Do not use locator language, "for free," text-or-email-only claims, or top-paying language. Do not add an About bio.
+Official lines come from dillardpropertyservices.com. The button label is "Get personalized recommendations." Do not publish a people-served total (the live site conflicts; see `NOTES.md`). Do not use locator language, "for free," text-or-email-only claims, or top-paying language. Use "Service paid for by Properties" where a no-cost claim would have appeared. Do not add an About bio.
 
 ## Contact facts in use
 
-- Phone: 512-640-2443
+- Text and office lines are defined in `site/js/site.js` and rendered on Contact, the home contact chapter, the Cheat Sheet, and the footer
 - Email: info@dillardpropertyservices.com
 - Zillow: https://www.zillow.com/profile/chrisdillard00/
+- Do not use `masterleads@dillardpropertyservices.com`
