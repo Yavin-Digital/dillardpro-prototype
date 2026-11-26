@@ -8,6 +8,13 @@ window.SITE = {
   email:    "info@dillardpropertyservices.com",
   emailLeads: "info@dillardpropertyservices.com",
   phone:    "512-640-2443",
+  phoneHref: "sms:+15126402443",
+  offices: [
+    { name: "DFW", phone: "214-382-2916", href: "tel:+12143822916" },
+    { name: "Houston", phone: "713-280-0593", href: "tel:+17132800593" },
+    { name: "Austin", phone: "512-521-3011", href: "tel:+15125213011" },
+    { name: "San Antonio", phone: "210-263-1142", href: "tel:+12102631142" }
+  ],
   domain:   "https://www.dillardpropertyservices.com",
   zillowReviews: "https://www.zillow.com/profile/chrisdillard00/",
   keapFormJS: "https://fk130.infusionsoft.com/app/form/iframe/20b6a3945ae033f3c2212c5cdf14a26d",

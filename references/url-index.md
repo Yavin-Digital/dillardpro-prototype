@@ -25,7 +25,7 @@ Homepage buttons also point at Cities, Availabilities, Reviews, About, and Cheat
 | https://www.dillardpropertyservices.com/blank | sitemap | DROP | Redirects to `/money`. Not a separate page. |
 | https://www.dillardpropertyservices.com/blank-1-1-1-1 | sitemap (title FIND) | DROP | Empty placeholder. Logo only. |
 | https://www.dillardpropertyservices.com/blank-1-1-1-1-2 | sitemap (title Money Back) | DROP | Empty placeholder. Logo only. |
-| https://www.dillardpropertyservices.com/privacy-policy | sitemap, footer | DROP | Template privacy policy, not a prototype page. Published mailbox on that page is `info@dillardpropertyservices.com`. |
-| https://www.dillardpropertyservices.com/terms-of-use | sitemap, footer | DROP | Template terms. Contact lines use `notice@demobootstrap.com` and `service@demobootstrap.com`, which are not used. |
+| https://www.dillardpropertyservices.com/privacy-policy | sitemap, footer | DROP | Live-site template policy is not used. The prototype has its own draft at `privacy.html` for client and legal review. |
+| https://www.dillardpropertyservices.com/terms-of-use | sitemap, footer | DROP | Live-site template terms (including `demobootstrap.com` addresses) are not used. The prototype has its own draft at `terms.html` for client and legal review. |
 
 `robots.txt` also names the sitemap at `https://www.dillardpropertyservices.com/sitemap.xml`. Lightbox, partial, and pro-gallery URLs were not crawled.

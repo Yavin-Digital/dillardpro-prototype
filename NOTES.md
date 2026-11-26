@@ -13,7 +13,7 @@ The About page also says "more than 20,000 clients paying over $325M combined in
 
 ## Other facts kept off the pages
 
-- Cheat Sheet and `/home` say the work is "For Free." Mike's rule removes that.
+- Cheat Sheet and `/home` said the work was "For Free." The prototype uses "Service paid for by Properties" instead.
 - `/home` and `/new` say "TEXT ME NOW." The prototype does not say the work is done by text or email only.
 - Five review screenshots use locator language, or "relocating," which contains the banned letter sequence. They are archived under `site/img/reviews/` and are not placed on a page.
 - The About bio is not published. `about.html` still redirects to the home page.

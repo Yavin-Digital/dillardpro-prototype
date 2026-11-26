@@ -16,7 +16,7 @@ Crawled 2026-11-10 from the KEEP urls in `references/url-index.md`. Destination 
 | `/home`, `/new` | "We pride ourselves in Client feedback. When you're happy, we're happy." | Reviews | USE | Official reviews intro. | Reviews |
 | `/home`, `/new` | "Over 17 Years Helping Well Over 300,000 People…" | Proof | REWRITE | 17+ years stays. 300,000 conflicts with the homepage. See NOTES.md. | Home. Number omitted. |
 | `/home`, `/new` | "More Targeted GEO Directed Search Results. Find What You Want Where You Want It." | Areas | USE | Official areas line. | Cities |
-| `/home`, `/new` | "The Latest Most Targeted Personalized Information for Our Clients… For Free. Updated At Your Request." | Cheat sheet | REWRITE | Keep the personalized-information line and "updated at your request." Drop "For Free." | Cheat sheet, home |
+| `/home`, `/new` | "The Latest Most Targeted Personalized Information for Our Clients… For Free. Updated At Your Request." | Cheat sheet | REWRITE | Keep the personalized-information line and "updated at your request." Replace "For Free" with "Service paid for by Properties." | Cheat sheet, home, contact |
 | `/home`, `/new` | "Well Researched Availabilities. Find What You Want Here If You're Not Quite Serious Yet. Updated Weekly." | Availabilities | USE | Official availabilities line. | Availabilities, home |
 | `/home`, `/new` | "TEXT ME NOW" | Button | DROP | Mike: do not advertise that everything is done by text or email only. | None. Button is "Get personalized recommendations". |
 | `/contact` | "Once You Submit, you'll be forwarded to our latest availabilities. Thousands of properties." | Form result | USE | Official post-submit line. | Contact, cheat sheet submit |
