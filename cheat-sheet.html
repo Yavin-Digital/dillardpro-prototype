@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cheat Sheet — Dillard Property Services</title>
-<meta name="description" content="The latest most targeted personalized information for our clients. Updated at your request.">
+<meta name="description" content="The latest most targeted personalized information for our clients. Service paid for by Properties. Updated at your request.">
 <meta property="og:title" content="Cheat Sheet — Dillard Property Services">
-<meta property="og:description" content="The latest most targeted personalized information for our clients. Updated at your request.">
+<meta property="og:description" content="The latest most targeted personalized information for our clients. Service paid for by Properties. Updated at your request.">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
 <meta property="og:image:alt" content="Meg and Chris Dillard">
 <link rel="icon" type="image/jpeg" href="./img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/system.css">
+<link rel="stylesheet" href="./css/system.css?v=1">
 <script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
-<script src="./js/site.js"></script>
+<script src="./js/site.js?v=1"></script>
 </head>
 <body>
 <div id="dp-nav"></div>
@@ -26,7 +26,7 @@
     <div class="hero-inner">
       <p class="kicker">Cheat Sheet</p>
       <h1>The latest most targeted personalized information for our clients.</h1>
-      <p class="lede">Updated at your request. Over 5,000 Texas properties in DFW, Houston, Austin, and San Antonio.</p>
+      <p class="lede">Service paid for by Properties. Updated at your request. Over 5,000 Texas properties in DFW, Houston, Austin, and San Antonio.</p>
     </div>
   </header>
 
@@ -71,17 +71,18 @@
           </div>
           <div class="form-group"><label for="moveDate">Move date</label><input id="moveDate" type="text" name="moveDate" required></div>
           <div class="form-group"><label for="details">Details</label><textarea id="details" name="details"></textarea></div>
-          <p class="consent-block">Message and data rates may apply. Reply STOP to opt out. Text HELP to 512-640-2443 or email <a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a>.</p>
+          <p class="consent-block">Message and data rates may apply. Reply STOP to opt out. Text HELP to <a class="tap-link" href="sms:+15126402443">512-640-2443</a> or email <a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a>.</p>
           <button type="submit" class="btn-submit">Get personalized recommendations</button>
         </form>
       </div>
       <div class="side-content">
         <h3>What you can expect</h3>
-        <p>The latest most targeted personalized information for our clients. Updated at your request.</p>
+        <p>The latest most targeted personalized information for our clients. Service paid for by Properties. Updated at your request.</p>
         <div class="proof-item"><div class="proof-text"><strong>Updated weekly</strong><span>Well researched availabilities.</span></div></div>
         <div class="proof-item"><div class="proof-text"><strong>Over 5,000 Texas properties</strong><span>DFW, Houston, Austin, and San Antonio.</span></div></div>
         <div class="proof-item"><div class="proof-text"><strong>Over 100 5-star reviews on Zillow</strong><span>We pride ourselves in client feedback. When you're happy, we're happy.</span></div></div>
-        <p>512-640-2443<br><a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a></p>
+        <div data-contact-lines></div>
+        <p><a class="tap-link" href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a></p>
       </div>
     </div>
   </section>
@@ -106,8 +107,8 @@ function updateAreas(metro) {
   });
 }
 </script>
-<script src="./js/layout.js"></script>
-<script src="./js/motion.js"></script>
-<script src="./js/chapter-nav.js"></script>
+<script src="./js/layout.js?v=1"></script>
+<script src="./js/motion.js?v=1"></script>
+<script src="./js/chapter-nav.js?v=1"></script>
 </body>
 </html>

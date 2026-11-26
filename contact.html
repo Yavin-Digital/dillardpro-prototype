@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Dillard Property Services</title>
-<meta name="description" content="We are the leader in apartment and condo rentals in the state of Texas. Call 512-640-2443.">
+<meta name="description" content="We are the leader in apartment and condo rentals in the state of Texas. Text 512-640-2443.">
 <meta property="og:title" content="Contact — Dillard Property Services">
 <meta property="og:image" content="https://yavin-digital.github.io/dillardpro-prototype/img/chris-meg.jpg">
 <meta property="og:image:alt" content="Meg and Chris Dillard">
@@ -12,9 +12,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/system.css">
+<link rel="stylesheet" href="./css/system.css?v=1">
 <script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
-<script src="./js/site.js"></script>
+<script src="./js/site.js?v=1"></script>
 </head>
 <body>
 <div id="dp-nav"></div>
@@ -54,15 +54,15 @@
             </select>
           </div>
           <div class="form-group"><label for="note">What you need</label><textarea id="note" name="note" required></textarea></div>
-          <p class="consent-block">Message and data rates may apply. Reply STOP to opt out. Text HELP to 512-640-2443 or email <a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a>.</p>
+          <p class="consent-block">Message and data rates may apply. Reply STOP to opt out. Text HELP to <a class="tap-link" href="sms:+15126402443">512-640-2443</a> or email <a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a>.</p>
           <button type="submit" class="btn-submit">Get personalized recommendations</button>
         </form>
       </div>
       <div class="side-content">
         <img class="couple" src="./img/chris-meg.jpg" alt="Meg and Chris Dillard" width="1926" height="1778">
         <h3>Meg &amp; Chris Dillard</h3>
-        <p><a href="tel:15126402443">512-640-2443</a></p>
-        <p><a href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a></p>
+        <div data-contact-lines></div>
+        <p><a class="tap-link" href="mailto:info@dillardpropertyservices.com">info@dillardpropertyservices.com</a></p>
         <p>Greater Austin area. DFW area, Houston area, San Antonio area.</p>
         <p><a href="https://www.zillow.com/profile/chrisdillard00/" target="_blank" rel="noopener">Over 100 5-star reviews on Zillow</a></p>
       </div>
@@ -71,13 +71,13 @@
 
   <section class="cheat-banner" data-snap aria-label="Cheat Sheet">
     <h2>The latest most targeted personalized information for our clients.</h2>
-    <p>Updated at your request.</p>
+    <p>Service paid for by Properties. Updated at your request.</p>
     <a href="./cheat-sheet.html" class="btn">Get personalized recommendations</a>
   </section>
 </main>
 <div id="dp-footer"></div>
-<script src="./js/layout.js"></script>
-<script src="./js/motion.js"></script>
-<script src="./js/chapter-nav.js"></script>
+<script src="./js/layout.js?v=1"></script>
+<script src="./js/motion.js?v=1"></script>
+<script src="./js/chapter-nav.js?v=1"></script>
 </body>
 </html>
